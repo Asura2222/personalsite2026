@@ -2,6 +2,7 @@ import { Highlight } from "@/components/ui/highlight";
 import { ProjectGrid } from "@/components/sections/project-grid";
 import { Twitter, Linkedin, Mail, Github } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -9,9 +10,24 @@ export default function Home() {
       {/* Header with Name and Social Icons */}
       <header className="mb-16">
         <div className="flex items-start justify-between">
-          <h1 className="text-5xl font-bold tracking-tight text-black md:text-6xl lg:text-7xl dark:text-white">
-            Name Surname
-          </h1>
+          <div className="flex items-center gap-4">
+            <h1 className="text-5xl font-bold tracking-tight text-black md:text-6xl lg:text-7xl dark:text-white">
+              James Wayne
+            </h1>
+            <div className="relative h-12 w-12 md:h-16 md:w-16 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+              {/* 
+                  NOTE TO USER: Replace '/profile.svg' with your actual image file.
+                  Put your 'profile.jpg' or 'profile.png' in the 'public' folder.
+               */}
+              <Image
+                src="/profile.svg"
+                alt="James Wayne"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+
           <div className="flex items-center gap-4">
             <Link
               href="https://twitter.com"
