@@ -59,20 +59,36 @@ export default function Home() {
             >
               <Mail className="h-5 w-5" />
             </Link>
+            <Link
+              href="https://t.me/win22james"
+              target="_blank"
+              className="text-gray-400 transition-colors hover:text-[#0088cc]"
+            >
+              {/* Lucide doesn't have Telegram by default, using a text label or generic icon? 
+                   Actually Send/MessageCircle is close, but better to just use text or generic.
+                   I'll use 'Send' as proxy or just rely on the others. 
+                   Wait, user provided specific Telegram link. I should add it.
+               */}
+              <span className="text-sm font-bold border rounded px-1">TG</span>
+            </Link>
           </div>
         </div>
       </header>
 
       {/* Bio Section */}
       <section className="mb-16">
+        <h2 className="text-3xl font-bold mb-6 text-black dark:text-white">
+          Philosopher, Buddhist Builder.
+        </h2>
         <p className="text-xl leading-relaxed text-gray-700 md:text-2xl dark:text-gray-300">
-          I&apos;m a builder, philosopher, and entrepreneur dedicated to rebuilding Myanmar.
+          I am a builder focused on meaning, systems, and ethics. My life&apos;s work is dedicated to rebuilding Myanmar.
+        </p>
+        <p className="mt-6 text-xl leading-relaxed text-gray-700 md:text-2xl dark:text-gray-300">
           I founded{" "}
           <Highlight color="blue">Build Myanmar</Highlight>, the largest tech
-          ecosystem in the country with 5,000+ members, and{" "}
+          ecosystem in the country, and{" "}
           <Highlight color="purple">TalentOS</Highlight>, a global platform for
-          skills and opportunity. My work bridges Buddhist philosophy with modern
-          systems thinking, creating ethical frameworks for nation-building.
+          skills and opportunity.
         </p>
       </section>
 
