@@ -12,7 +12,7 @@ export default function Home() {
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-4">
             <h1 className="text-5xl font-bold tracking-tight text-black md:text-6xl lg:text-7xl dark:text-white">
-              James Wayne
+              James Win
             </h1>
             <div className="relative h-12 w-12 md:h-16 md:w-16 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
               {/* 
@@ -20,8 +20,8 @@ export default function Home() {
                   Put your 'profile.jpg' or 'profile.png' in the 'public' folder.
                */}
               <Image
-                src="/profile.svg"
-                alt="James Wayne"
+                src="/profile.jpg"
+                alt="James Win"
                 fill
                 className="object-cover"
               />
