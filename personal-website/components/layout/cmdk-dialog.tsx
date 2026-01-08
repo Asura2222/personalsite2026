@@ -117,7 +117,7 @@ export function CommandMenu() {
                   <Command.Item
                     onSelect={() =>
                       runCommand(() => {
-                        navigator.clipboard.writeText("hello@example.com");
+                        navigator.clipboard.writeText("win@talentosapp.com");
                       })
                     }
                     className="flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors hover:bg-gray-100 dark:hover:bg-gray-900"
@@ -128,18 +128,18 @@ export function CommandMenu() {
                   <Command.Item
                     onSelect={() =>
                       runCommand(() =>
-                        window.open("https://twitter.com", "_blank")
+                        window.open("https://x.com/Win22James", "_blank")
                       )
                     }
                     className="flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors hover:bg-gray-100 dark:hover:bg-gray-900"
                   >
                     <Twitter className="h-4 w-4" />
-                    <span>Twitter</span>
+                    <span>Twitter / X</span>
                   </Command.Item>
                   <Command.Item
                     onSelect={() =>
                       runCommand(() =>
-                        window.open("https://linkedin.com", "_blank")
+                        window.open("https://www.linkedin.com/in/james-win/", "_blank")
                       )
                     }
                     className="flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors hover:bg-gray-100 dark:hover:bg-gray-900"
@@ -150,7 +150,7 @@ export function CommandMenu() {
                   <Command.Item
                     onSelect={() =>
                       runCommand(() =>
-                        window.open("https://github.com", "_blank")
+                        window.open("https://github.com/Asura2222", "_blank")
                       )
                     }
                     className="flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors hover:bg-gray-100 dark:hover:bg-gray-900"

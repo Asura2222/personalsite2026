@@ -26,7 +26,7 @@ export default function Home() {
 
           <div className="flex items-center gap-4">
             <Link
-              href="https://twitter.com"
+              href="https://x.com/Win22James"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 transition-colors hover:text-black dark:hover:text-white"
@@ -34,7 +34,7 @@ export default function Home() {
               <Twitter className="h-5 w-5" />
             </Link>
             <Link
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/james-win/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 transition-colors hover:text-black dark:hover:text-white"
@@ -42,7 +42,7 @@ export default function Home() {
               <Linkedin className="h-5 w-5" />
             </Link>
             <Link
-              href="https://github.com"
+              href="https://github.com/Asura2222"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 transition-colors hover:text-black dark:hover:text-white"
