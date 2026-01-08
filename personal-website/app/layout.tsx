@@ -28,7 +28,7 @@ export default function RootLayout({
         <Sidebar />
         <CommandMenu />
         <main className="lg:pl-36">
-          <div className="px-6 py-16 lg:px-12 lg:py-24">
+          <div className="px-6 pb-16 pt-24 lg:px-12 lg:py-24">
             {children}
           </div>
         </main>

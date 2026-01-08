@@ -11,7 +11,7 @@ export default function Home() {
       <header className="mb-16">
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-4">
-            <h1 className="text-5xl font-bold tracking-tight text-black md:text-6xl lg:text-7xl dark:text-white">
+            <h1 className="text-4xl font-bold tracking-tight text-black md:text-6xl lg:text-7xl dark:text-white">
               James Win
             </h1>
             <div className="relative h-12 w-12 md:h-16 md:w-16 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">

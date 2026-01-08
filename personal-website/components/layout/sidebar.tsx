@@ -27,11 +27,10 @@ export function Sidebar() {
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className={`text-sm lowercase tracking-wide transition-colors ${
-                    pathname === item.href
+                  className={`text-sm lowercase tracking-wide transition-colors ${pathname === item.href
                       ? 'text-black dark:text-white'
                       : 'text-gray-400 hover:text-black dark:text-gray-500 dark:hover:text-white'
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Link>
@@ -42,7 +41,10 @@ export function Sidebar() {
       </aside>
 
       {/* Mobile Menu Button */}
-      <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-white px-6 py-4 lg:hidden dark:bg-black">
+      <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-white/80 backdrop-blur-md px-6 py-4 lg:hidden dark:bg-black/80 border-b border-gray-100 dark:border-gray-900">
+        <Link href="/" className="text-lg font-bold tracking-tight text-black dark:text-white">
+          James Win
+        </Link>
         <button
           type="button"
           className="text-gray-700 dark:text-gray-300"
@@ -66,11 +68,10 @@ export function Sidebar() {
                   <Link
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`text-2xl lowercase tracking-wide transition-colors ${
-                      pathname === item.href
+                    className={`text-2xl lowercase tracking-wide transition-colors ${pathname === item.href
                         ? 'text-black dark:text-white'
                         : 'text-gray-400 hover:text-black dark:text-gray-500 dark:hover:text-white'
-                    }`}
+                      }`}
                   >
                     {item.name}
                   </Link>
