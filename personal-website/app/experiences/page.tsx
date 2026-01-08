@@ -60,9 +60,27 @@ const experiences = [
 export default function Experiences() {
   return (
     <div className="mx-auto max-w-3xl">
-      <h1 className="mb-12 text-4xl font-bold tracking-tight text-black dark:text-white flex items-center gap-4">
+      <h1 className="mb-8 text-4xl font-bold tracking-tight text-black dark:text-white flex items-center gap-4">
         Experiences
       </h1>
+
+      {/* Background Section */}
+      <section className="mb-16 bg-gray-50 dark:bg-gray-900/50 p-6 rounded-2xl border border-gray-100 dark:border-gray-800">
+        <h2 className="text-xl font-bold mb-4 text-black dark:text-white">Background</h2>
+        <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+          <p>
+            I&apos;m originally from <Highlight color="red">Myanmar</Highlight>.
+            I studied <Highlight color="yellow">Applied Economics</Highlight> in the U.S.
+          </p>
+          <p>
+            My strengths are <Highlight color="purple">storytelling</Highlight>, <Highlight color="green">community building</Highlight> & <Highlight color="blue">execution</Highlight>.
+            I spend most of my time building systems that help people learn, build, and find meaningful work.
+          </p>
+          <p>
+            Right now, my focus is <Highlight color="blue">TalentOS</Highlight> and expanding <Highlight color="green">Build Myanmar</Highlight>&apos;s physical and digital infrastructure.
+          </p>
+        </div>
+      </section>
 
       <div className="relative border-l border-gray-200 ml-3 dark:border-gray-800">
         {experiences.map((exp, index) => (

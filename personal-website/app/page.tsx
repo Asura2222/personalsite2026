@@ -15,10 +15,6 @@ export default function Home() {
               James Win
             </h1>
             <div className="relative h-12 w-12 md:h-16 md:w-16 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
-              {/* 
-                  NOTE TO USER: Replace '/profile.svg' with your actual image file.
-                  Put your 'profile.jpg' or 'profile.png' in the 'public' folder.
-               */}
               <Image
                 src="/profile.jpg"
                 alt="James Win"
@@ -54,7 +50,7 @@ export default function Home() {
               <Github className="h-5 w-5" />
             </Link>
             <Link
-              href="mailto:hello@example.com"
+              href="mailto:win@talentosapp.com"
               className="text-gray-400 transition-colors hover:text-black dark:hover:text-white"
             >
               <Mail className="h-5 w-5" />
@@ -64,11 +60,6 @@ export default function Home() {
               target="_blank"
               className="text-gray-400 transition-colors hover:text-[#0088cc]"
             >
-              {/* Lucide doesn't have Telegram by default, using a text label or generic icon? 
-                   Actually Send/MessageCircle is close, but better to just use text or generic.
-                   I'll use 'Send' as proxy or just rely on the others. 
-                   Wait, user provided specific Telegram link. I should add it.
-               */}
               <span className="text-sm font-bold border rounded px-1">TG</span>
             </Link>
           </div>
@@ -78,32 +69,54 @@ export default function Home() {
       {/* Bio Section */}
       <section className="mb-16">
         <h2 className="text-3xl font-bold mb-6 text-black dark:text-white">
-          Philosopher, Buddhist Builder.
+          Philosopher. Buddhist. Builder.
         </h2>
+        <h3 className="text-xl text-gray-500 mb-6 font-medium">
+          I build systems that make impact.
+        </h3>
         <p className="text-xl leading-relaxed text-gray-700 md:text-2xl dark:text-gray-300">
-          I am a builder focused on meaning, systems, and ethics. My life&apos;s work is dedicated to rebuilding Myanmar.
+          At 19, I founded <Highlight color="blue">Build Myanmar</Highlight>, the country&apos;s largest tech media company, and now at 23, I am building <Highlight color="purple">TalentOS</Highlight>, a global data platform for skill verification.
         </p>
         <p className="mt-6 text-xl leading-relaxed text-gray-700 md:text-2xl dark:text-gray-300">
-          I founded{" "}
-          <Highlight color="blue">Build Myanmar</Highlight>, the largest tech
-          ecosystem in the country, and{" "}
-          <Highlight color="purple">TalentOS</Highlight>, a global platform for
-          skills and opportunity.
+          My work sits at the intersection of <Highlight color="green">community</Highlight>, <Highlight color="green">technology</Highlight>, and long-term <Highlight color="red">nation building</Highlight>.
         </p>
       </section>
 
-      {/* Cool Things Section */}
+      {/* Mission Section */}
       <section className="mb-16">
         <h2 className="mb-6 text-sm uppercase tracking-wider text-gray-500">
-          some cool things I&apos;ve done:
+          Mission
+        </h2>
+        <div className="text-xl leading-relaxed text-gray-700 md:text-2xl dark:text-gray-300 space-y-4">
+          <p>
+            My life&apos;s goal is simple: <span className="font-semibold text-black dark:text-white">rebuild Myanmar</span>.
+          </p>
+          <p className="text-gray-500 dark:text-gray-400">
+            Not through politics.<br />
+            Not through charity.
+          </p>
+          <p>
+            By building <Highlight color="blue">parallel systems</Highlight> that actually work:
+          </p>
+          <ul className="list-disc pl-5 space-y-2 mt-4 text-lg md:text-xl">
+            <li>Community-owned infrastructure</li>
+            <li>Skill-based identity and opportunity layer</li>
+            <li>Media, education, and capital for builders</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Highlights Section */}
+      <section className="mb-16">
+        <h2 className="mb-6 text-sm uppercase tracking-wider text-gray-500">
+          Highlights &mdash; Some things I&apos;ve built along the way:
         </h2>
         <ul className="space-y-3 text-lg text-gray-700 dark:text-gray-300">
-          <li>• Built Myanmar&apos;s largest tech ecosystem (5,000+ members)</li>
-          <li>• Founded TalentOS, a global skills and identity platform</li>
-          <li>• Grew social media presence to 400K+ followers</li>
-          <li>• Established physical spaces for builders and entrepreneurs</li>
-          <li>• Launched podcasts and content series on nation-building</li>
-          <li>• Applied Buddhist philosophy to modern technology and ethics</li>
+          <li>• Built Myanmar&apos;s largest tech builder community (<Highlight color="green">5,000+ members</Highlight>)</li>
+          <li>• Founded TalentOS, a global skill and identity platform (<Highlight color="purple">8000+ users</Highlight>)</li>
+          <li>• Grew media reach to <Highlight color="blue">450K+ followers</Highlight> and <Highlight color="blue">60M+ total views</Highlight></li>
+          <li>• Opened Myanmar&apos;s first physical spaces for builders and entrepreneurs</li>
+          <li>• Produced Myanmar&apos;s most famous tech podcast</li>
         </ul>
       </section>
 
