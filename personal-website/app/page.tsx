@@ -9,12 +9,12 @@ export default function Home() {
     <div className="mx-auto max-w-5xl">
       {/* Header with Name and Social Icons */}
       <header className="mb-16">
-        <div className="flex items-start justify-between">
-          <div className="flex items-center gap-4">
-            <h1 className="text-4xl font-bold tracking-tight text-black md:text-6xl lg:text-7xl dark:text-white">
+        <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col-reverse items-start gap-4 md:flex-row md:items-center">
+            <h1 className="text-4xl font-bold tracking-tight text-black md:text-6xl lg:text-7xl whitespace-nowrap">
               James Win
             </h1>
-            <div className="relative h-12 w-12 md:h-16 md:w-16 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+            <div className="relative h-12 w-12 md:h-16 md:w-16 overflow-hidden rounded-lg bg-gray-100">
               <Image
                 src="/profile.jpg"
                 alt="James Win"
@@ -29,7 +29,7 @@ export default function Home() {
               href="https://x.com/Win22James"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 transition-colors hover:text-black dark:hover:text-white"
+              className="text-gray-400 transition-colors hover:text-black"
             >
               <Twitter className="h-5 w-5" />
             </Link>
@@ -37,7 +37,7 @@ export default function Home() {
               href="https://www.linkedin.com/in/james-win/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 transition-colors hover:text-black dark:hover:text-white"
+              className="text-gray-400 transition-colors hover:text-black"
             >
               <Linkedin className="h-5 w-5" />
             </Link>
@@ -45,13 +45,13 @@ export default function Home() {
               href="https://github.com/Asura2222"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 transition-colors hover:text-black dark:hover:text-white"
+              className="text-gray-400 transition-colors hover:text-black"
             >
               <Github className="h-5 w-5" />
             </Link>
             <Link
               href="mailto:win@talentosapp.com"
-              className="text-gray-400 transition-colors hover:text-black dark:hover:text-white"
+              className="text-gray-400 transition-colors hover:text-black"
             >
               <Mail className="h-5 w-5" />
             </Link>
@@ -68,16 +68,16 @@ export default function Home() {
 
       {/* Bio Section */}
       <section className="mb-16">
-        <h2 className="text-3xl font-bold mb-6 text-black dark:text-white">
+        <h2 className="text-3xl font-bold mb-6 text-black">
           Philosopher. Buddhist. Builder.
         </h2>
         <h3 className="text-xl text-gray-500 mb-6 font-medium">
           I build systems that make impact.
         </h3>
-        <p className="text-xl leading-relaxed text-gray-700 md:text-2xl dark:text-gray-300">
+        <p className="text-xl leading-relaxed text-gray-700 md:text-2xl">
           At 19, I founded <Highlight color="blue">Build Myanmar</Highlight>, the country&apos;s largest tech media company, and now at 23, I am building <Highlight color="purple">TalentOS</Highlight>, a global data platform for skill verification.
         </p>
-        <p className="mt-6 text-xl leading-relaxed text-gray-700 md:text-2xl dark:text-gray-300">
+        <p className="mt-6 text-xl leading-relaxed text-gray-700 md:text-2xl">
           My work sits at the intersection of <Highlight color="green">community</Highlight>, <Highlight color="green">technology</Highlight>, and long-term <Highlight color="red">nation building</Highlight>.
         </p>
       </section>
@@ -87,11 +87,11 @@ export default function Home() {
         <h2 className="mb-6 text-sm uppercase tracking-wider text-gray-500">
           Mission
         </h2>
-        <div className="text-xl leading-relaxed text-gray-700 md:text-2xl dark:text-gray-300 space-y-4">
+        <div className="text-xl leading-relaxed text-gray-700 md:text-2xl space-y-4">
           <p>
-            My life&apos;s goal is simple: <span className="font-semibold text-black dark:text-white">rebuild Myanmar</span>.
+            My life&apos;s goal is simple: <span className="font-semibold text-black">rebuild Myanmar</span>.
           </p>
-          <p className="text-gray-500 dark:text-gray-400">
+          <p className="text-gray-500">
             Not through politics.<br />
             Not through charity.
           </p>
@@ -111,7 +111,7 @@ export default function Home() {
         <h2 className="mb-6 text-sm uppercase tracking-wider text-gray-500">
           Highlights &mdash; Some things I&apos;ve built along the way:
         </h2>
-        <ul className="space-y-3 text-lg text-gray-700 dark:text-gray-300">
+        <ul className="space-y-3 text-lg text-gray-700">
           <li>• Built Myanmar&apos;s largest tech builder community (<Highlight color="green">5,000+ members</Highlight>)</li>
           <li>• Founded TalentOS, a global skill and identity platform (<Highlight color="purple">8000+ users</Highlight>)</li>
           <li>• Grew media reach to <Highlight color="blue">450K+ followers</Highlight> and <Highlight color="blue">60M+ total views</Highlight></li>

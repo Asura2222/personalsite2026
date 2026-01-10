@@ -16,7 +16,7 @@ const photos = [
 export default function Photos() {
   return (
     <div className="mx-auto max-w-4xl">
-      <h1 className="mb-12 text-4xl font-bold tracking-tight text-black dark:text-white">
+      <h1 className="mb-12 text-4xl font-bold tracking-tight text-black">
         Photos
       </h1>
 
@@ -25,7 +25,7 @@ export default function Photos() {
         <div className="flex flex-col gap-4">
           {photos.filter((_, i) => i % 2 === 0).map((photo) => (
             <div key={photo.id} className="group relative overflow-hidden rounded-lg">
-              <div className={`w-full ${photo.aspect} ${photo.color} dark:bg-gray-800 transition-opacity hover:opacity-90`} />
+              <div className={`w-full ${photo.aspect} ${photo.color} transition-opacity hover:opacity-90`} />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                 <p className="text-white text-sm font-medium">{photo.caption}</p>
               </div>
@@ -37,7 +37,7 @@ export default function Photos() {
         <div className="flex flex-col gap-4">
           {photos.filter((_, i) => i % 2 !== 0).map((photo) => (
             <div key={photo.id} className="group relative overflow-hidden rounded-lg">
-              <div className={`w-full ${photo.aspect} ${photo.color} dark:bg-gray-800 transition-opacity hover:opacity-90`} />
+              <div className={`w-full ${photo.aspect} ${photo.color} transition-opacity hover:opacity-90`} />
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                 <p className="text-white text-sm font-medium">{photo.caption}</p>
               </div>

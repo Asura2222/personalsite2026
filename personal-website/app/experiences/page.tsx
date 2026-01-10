@@ -60,14 +60,14 @@ const experiences = [
 export default function Experiences() {
   return (
     <div className="mx-auto max-w-3xl">
-      <h1 className="mb-8 text-4xl font-bold tracking-tight text-black dark:text-white flex items-center gap-4">
+      <h1 className="mb-8 text-4xl font-bold tracking-tight text-black flex items-center gap-4">
         Experiences
       </h1>
 
       {/* Background Section */}
-      <section className="mb-16 bg-gray-50 dark:bg-gray-900/50 p-6 rounded-2xl border border-gray-100 dark:border-gray-800">
-        <h2 className="text-xl font-bold mb-4 text-black dark:text-white">Background</h2>
-        <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed text-lg">
+      <section className="mb-16 bg-gray-50 p-6 rounded-2xl border border-gray-100">
+        <h2 className="text-xl font-bold mb-4 text-black">Background</h2>
+        <div className="space-y-4 text-gray-700 leading-relaxed text-lg">
           <p>
             I&apos;m originally from <Highlight color="red">Myanmar</Highlight>.
             I studied <Highlight color="yellow">Applied Economics</Highlight> in the U.S.
@@ -82,14 +82,14 @@ export default function Experiences() {
         </div>
       </section>
 
-      <div className="relative border-l border-gray-200 ml-3 dark:border-gray-800">
+      <div className="relative border-l border-gray-200 ml-3">
         {experiences.map((exp, index) => (
           <div key={index} className="mb-16 ml-6 group relative">
-            <div className="absolute -left-[31px] mt-1.5 h-4 w-4 rounded-full border-2 border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700 group-hover:bg-black dark:group-hover:bg-white transition-colors shadow-sm" />
+            <div className="absolute -left-[31px] mt-1.5 h-4 w-4 rounded-full border-2 border-white bg-gray-200 group-hover:bg-black transition-colors shadow-sm" />
 
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
               <div>
-                <h2 className="text-xl font-bold text-black dark:text-white">
+                <h2 className="text-xl font-bold text-black">
                   {exp.role}
                 </h2>
                 <div className="mt-1 flex flex-wrap items-center gap-2">
@@ -98,7 +98,7 @@ export default function Experiences() {
                 </div>
               </div>
               <div className="mt-2 sm:mt-0 text-right">
-                <time className="block text-sm font-medium text-black dark:text-white">
+                <time className="block text-sm font-medium text-black">
                   {exp.period}
                 </time>
                 <span className="text-xs text-gray-400 font-mono">
@@ -107,7 +107,7 @@ export default function Experiences() {
               </div>
             </div>
 
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed max-w-2xl text-base">
+            <p className="text-gray-600 leading-relaxed max-w-2xl text-base">
               {exp.description}
             </p>
           </div>

@@ -77,7 +77,7 @@ export function ProjectGrid() {
   return (
     <div>
       {/* Tab Navigation */}
-      <div className="mb-8 flex gap-2 border-b border-gray-200 dark:border-gray-800 overflow-x-auto pb-1">
+      <div className="mb-8 flex gap-2 border-b border-gray-200 overflow-x-auto pb-1">
         {tabs.map((tab) => (
           <button
             key={tab.id}
@@ -87,15 +87,15 @@ export function ProjectGrid() {
             {activeTab === tab.id && (
               <motion.div
                 layoutId="activeTab"
-                className="absolute inset-0 bg-black dark:bg-white"
+                className="absolute inset-0 bg-black"
                 style={{ borderRadius: 6 }}
                 transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
               />
             )}
             <span
               className={`relative z-10 ${activeTab === tab.id
-                  ? "text-white dark:text-black"
-                  : "text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white"
+                ? "text-white"
+                : "text-gray-600 hover:text-black"
                 }`}
             >
               {tab.label}

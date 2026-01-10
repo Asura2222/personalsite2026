@@ -28,8 +28,8 @@ export function Sidebar() {
                 <Link
                   href={item.href}
                   className={`text-sm lowercase tracking-wide transition-colors ${pathname === item.href
-                      ? 'text-black dark:text-white'
-                      : 'text-gray-400 hover:text-black dark:text-gray-500 dark:hover:text-white'
+                    ? 'text-black'
+                    : 'text-gray-400 hover:text-black'
                     }`}
                 >
                   {item.name}
@@ -41,13 +41,13 @@ export function Sidebar() {
       </aside>
 
       {/* Mobile Menu Button */}
-      <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-white/80 backdrop-blur-md px-6 py-4 lg:hidden dark:bg-black/80 border-b border-gray-100 dark:border-gray-900">
-        <Link href="/" className="text-lg font-bold tracking-tight text-black dark:text-white">
+      <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-white/80 backdrop-blur-md px-6 py-4 lg:hidden border-b border-gray-100">
+        <Link href="/" className="text-lg font-bold tracking-tight text-black">
           James Win
         </Link>
         <button
           type="button"
-          className="text-gray-700 dark:text-gray-300"
+          className="text-gray-700"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? (
@@ -60,7 +60,7 @@ export function Sidebar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-white lg:hidden dark:bg-black">
+        <div className="fixed inset-0 z-40 bg-white lg:hidden">
           <nav className="flex h-full flex-col items-center justify-center">
             <ul className="space-y-8">
               {navigation.map((item) => (
@@ -69,8 +69,8 @@ export function Sidebar() {
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className={`text-2xl lowercase tracking-wide transition-colors ${pathname === item.href
-                        ? 'text-black dark:text-white'
-                        : 'text-gray-400 hover:text-black dark:text-gray-500 dark:hover:text-white'
+                      ? 'text-black'
+                      : 'text-gray-400 hover:text-black'
                       }`}
                   >
                     {item.name}

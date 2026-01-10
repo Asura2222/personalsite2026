@@ -31,13 +31,13 @@ export default function Fieldnotes() {
   return (
     <div className="mx-auto max-w-3xl">
       <div className="flex items-center justify-between mb-12">
-        <h1 className="text-4xl font-bold tracking-tight text-black dark:text-white">
+        <h1 className="text-4xl font-bold tracking-tight text-black">
           Fieldnotes
         </h1>
         <Link
           href="https://monkeynews.substack.com/"
           target="_blank"
-          className="text-sm font-medium text-gray-500 hover:text-black dark:hover:text-white flex items-center gap-1 transition-colors"
+          className="text-sm font-medium text-gray-500 hover:text-black flex items-center gap-1 transition-colors"
         >
           Read on Substack <ArrowUpRight className="w-4 h-4" />
         </Link>
@@ -53,15 +53,15 @@ export default function Fieldnotes() {
               className="block p-1 -m-1"
             >
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
-                <h2 className="text-xl font-semibold text-black dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors flex items-center gap-2">
+                <h2 className="text-xl font-semibold text-black group-hover:text-gray-600 transition-colors flex items-center gap-2">
                   {post.title}
                   <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity text-gray-400" />
                 </h2>
-                <span className="text-sm text-gray-400 font-mono shrink-0 mt-1 sm:mt-0 px-2 py-0.5 rounded bg-gray-100 dark:bg-gray-800">
+                <span className="text-sm text-gray-400 font-mono shrink-0 mt-1 sm:mt-0 px-2 py-0.5 rounded bg-gray-100">
                   {post.date}
                 </span>
               </div>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 {post.excerpt}
               </p>
             </Link>
@@ -69,11 +69,11 @@ export default function Fieldnotes() {
         ))}
       </div>
 
-      <div className="mt-12 pt-8 border-t border-gray-100 dark:border-gray-900 text-center">
+      <div className="mt-12 pt-8 border-t border-gray-100 text-center">
         <Link
           href="https://monkeynews.substack.com/"
           target="_blank"
-          className="inline-flex items-center gap-2 text-gray-500 hover:text-black dark:hover:text-white transition-colors"
+          className="inline-flex items-center gap-2 text-gray-500 hover:text-black transition-colors"
         >
           View all posts on Substack <ArrowUpRight className="w-4 h-4" />
         </Link>
