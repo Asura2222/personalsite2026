@@ -12,7 +12,7 @@ const experiences = [
     company: "TalentOS",
     period: "Jan 2025 - Present",
     location: "San Francisco Bay Area",
-    description: "Building the data layer for the global labor market. Today's labor market runs on unstructured documents & guesswork. We collect real work outputs at scale, verify it, and structure it into machine readable data that AI agents and enterprises can use.",
+    description: "TalentOS is the first, full-stack, AI hiring infrastructure. Our systems handle the full hiring lifecycle — from skill development, vetting to automated matching and hiring workflows. Our goal is to make the future of work merit-based and fully verifiable. 8000+ users & counting",
     highlight: "blue" as const,
   },
   {

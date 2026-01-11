@@ -10,7 +10,7 @@ const projects = [
   {
     id: 1,
     title: "TalentOS",
-    description: "Global skill verification and identity layer. A verification data layer for the labor market.",
+    description: "The first, full-stack, AI hiring infrastructure. From skill development to automated matching and hiring workflows.",
     category: "project" as const,
     href: "https://www.talentosapp.com/",
   },
