@@ -71,11 +71,9 @@ export default function Home() {
         <h2 className="text-3xl font-bold mb-6 text-black">
           Philosopher. Buddhist. Builder.
         </h2>
-        <h3 className="text-xl text-gray-500 mb-6 font-medium">
-          I build systems that make impact.
-        </h3>
+
         <p className="text-xl leading-relaxed text-gray-700 md:text-2xl">
-          At 19, I founded <Highlight color="blue">Build Myanmar</Highlight>, the country&apos;s largest tech media company, and now at 23, I am building <Highlight color="purple">TalentOS</Highlight>, the first full-stack AI hiring infrastructure.
+          At 19, I founded <Highlight color="blue">Build Myanmar</Highlight>, the country&apos;s largest tech media company, and now at 23, I am building <Highlight color="purple">TalentOS</Highlight>, the verification layer for the labor market.
         </p>
         <p className="mt-6 text-xl leading-relaxed text-gray-700 md:text-2xl">
           My work sits at the intersection of <Highlight color="green">community</Highlight>, <Highlight color="green">technology</Highlight>, and long-term <Highlight color="red">nation building</Highlight>.
@@ -113,7 +111,7 @@ export default function Home() {
         </h2>
         <ul className="space-y-3 text-lg text-gray-700">
           <li>• Built Myanmar&apos;s largest tech builder community (<Highlight color="green">5,000+ members</Highlight>)</li>
-          <li>• Founded TalentOS, the first full-stack AI hiring infrastructure (<Highlight color="purple">8000+ users</Highlight>)</li>
+          <li>• Founded TalentOS, the verification layer for the labor market (<Highlight color="purple">10,000+ users</Highlight>)</li>
           <li>• Grew media reach to <Highlight color="blue">450K+ followers</Highlight> and <Highlight color="blue">60M+ total views</Highlight></li>
           <li>• Opened Myanmar&apos;s first physical spaces for builders and entrepreneurs</li>
           <li>• Produced Myanmar&apos;s most famous tech podcast</li>

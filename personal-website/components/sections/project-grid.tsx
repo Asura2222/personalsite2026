@@ -10,7 +10,7 @@ const projects = [
   {
     id: 1,
     title: "TalentOS",
-    description: "The first, full-stack, AI hiring infrastructure. From skill development to automated matching and hiring workflows.",
+    description: "TalentOS is the verification layer for the labor market. We’re replacing traditional credentials with verified data from real work, so hiring runs on proof instead of claims. We are building an automated and meritocratic labor market where verified action data becomes the universal standard for employment.",
     category: "project" as const,
     href: "https://www.talentosapp.com/",
   },
