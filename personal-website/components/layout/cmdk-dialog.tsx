@@ -8,7 +8,7 @@ import {
   Briefcase,
   BookOpen,
   Lightbulb,
-  Camera,
+  Youtube,
   Mail,
   Twitter,
   Linkedin,
@@ -104,11 +104,11 @@ export function CommandMenu() {
                     <span>My Philosophy</span>
                   </Command.Item>
                   <Command.Item
-                    onSelect={() => runCommand(() => router.push("/photos"))}
+                    onSelect={() => runCommand(() => router.push("/videos"))}
                     className="flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors hover:bg-gray-100"
                   >
-                    <Camera className="h-4 w-4" />
-                    <span>Photos</span>
+                    <Youtube className="h-4 w-4" />
+                    <span>Videos</span>
                   </Command.Item>
                 </Command.Group>
 

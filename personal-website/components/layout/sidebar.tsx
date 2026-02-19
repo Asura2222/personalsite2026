@@ -10,7 +10,7 @@ const navigation = [
   { name: 'experiences', href: '/experiences' },
   { name: 'fieldnotes', href: '/fieldnotes' },
   { name: 'my philosophy', href: '/philosophy' },
-  { name: 'photos', href: '/photos' },
+  { name: 'videos', href: '/videos' },
 ];
 
 export function Sidebar() {

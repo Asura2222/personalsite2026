@@ -73,7 +73,7 @@ export default function Home() {
         </h2>
 
         <p className="text-xl leading-relaxed text-gray-700 md:text-2xl">
-          At 19, I founded <Highlight color="blue">Build Myanmar</Highlight>, the country&apos;s largest tech media company, and now at 23, I am building <Highlight color="purple">TalentOS</Highlight>, the verification layer for the labor market.
+          At 19, I founded <Highlight color="blue">Build Myanmar</Highlight>, the country&apos;s largest tech media company, and now at 24, I am building <Highlight color="purple">TalentOS</Highlight>, the verification layer for the labor market.
         </p>
         <p className="mt-6 text-xl leading-relaxed text-gray-700 md:text-2xl">
           My work sits at the intersection of <Highlight color="green">community</Highlight>, <Highlight color="green">technology</Highlight>, and long-term <Highlight color="red">nation building</Highlight>.
