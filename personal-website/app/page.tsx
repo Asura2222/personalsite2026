@@ -66,56 +66,54 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Bio Section */}
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold mb-6 text-black">
+      {/* Hero Tagline */}
+      <section className="mb-12">
+        <h2 className="text-3xl font-bold mb-4 text-black">
           Philosopher. Buddhist. Builder.
         </h2>
-
         <p className="text-xl leading-relaxed text-gray-700 md:text-2xl">
-          At 19, I founded <Highlight color="blue">Build Myanmar</Highlight>, the country&apos;s largest tech media company, and now at 24, I am building <Highlight color="purple">TalentOS</Highlight>, the verification layer for the labor market.
-        </p>
-        <p className="mt-6 text-xl leading-relaxed text-gray-700 md:text-2xl">
-          My work sits at the intersection of <Highlight color="green">community</Highlight>, <Highlight color="green">technology</Highlight>, and long-term <Highlight color="red">nation building</Highlight>.
+          I grew up in Myanmar as a curious, insecure kid. The only way I knew how to prove myself was to <span className="font-semibold text-black">build things</span>.
         </p>
       </section>
 
-      {/* Mission Section */}
-      <section className="mb-16">
-        <h2 className="mb-6 text-sm uppercase tracking-wider text-gray-500">
-          Mission
-        </h2>
-        <div className="text-xl leading-relaxed text-gray-700 md:text-2xl space-y-4">
+      {/* Origin — Build Myanmar */}
+      <section className="mb-12">
+        <h3 className="mb-5 text-xs uppercase tracking-widest text-gray-400 font-medium">
+          Origin
+        </h3>
+        <div className="space-y-5 text-lg leading-relaxed text-gray-700 md:text-xl">
           <p>
-            My life&apos;s goal is simple: <span className="font-semibold text-black">rebuild Myanmar</span>.
-          </p>
-          <p className="text-gray-500">
-            Not through politics.<br />
-            Not through charity.
+            A project I started at 19 grew into something real. <Highlight color="blue">Build Myanmar</Highlight> became the country&apos;s largest tech community &mdash; <Highlight color="blue">450K+ followers</Highlight>, <Highlight color="blue">60M+ views</Highlight>, and <Highlight color="green">5,000 builders</Highlight> who showed up because someone finally made a place for them.
           </p>
           <p>
-            By building <Highlight color="blue">parallel systems</Highlight> that actually work:
+            We opened Myanmar&apos;s first physical spaces for builders and entrepreneurs, and produced the country&apos;s most famous tech podcast &mdash; giving a voice to the people actually doing the work.
           </p>
-          <ul className="list-disc pl-5 space-y-2 mt-4 text-lg md:text-xl">
-            <li>Community-owned infrastructure</li>
-            <li>Skill-based identity and opportunity layer</li>
-            <li>Media, education, and capital for builders</li>
-          </ul>
         </div>
       </section>
 
-      {/* Highlights Section */}
+      {/* The Insight */}
+      <section className="mb-12">
+        <h3 className="mb-5 text-xs uppercase tracking-widest text-gray-400 font-medium">
+          The Insight
+        </h3>
+        <p className="text-lg leading-relaxed text-gray-700 md:text-xl">
+          That community showed me the same thing over and over: <span className="italic font-medium text-gray-900">talent is everywhere, but it almost never gets discovered.</span>
+        </p>
+        <div className="mt-5 space-y-5 text-lg leading-relaxed text-gray-700 md:text-xl">
+          <p>
+            So I built <Highlight color="purple">TalentOS</Highlight>. We replace resumes with verified work. People complete real missions, get graded by AI, and build a track record employers can trust. <Highlight color="purple">14,000+ users</Highlight>. Revenue from day one.
+          </p>
+        </div>
+      </section>
+
+      {/* Now */}
       <section className="mb-16">
-        <h2 className="mb-6 text-sm uppercase tracking-wider text-gray-500">
-          Highlights &mdash; Some things I&apos;ve built along the way:
-        </h2>
-        <ul className="space-y-3 text-lg text-gray-700">
-          <li>• Built Myanmar&apos;s largest tech builder community (<Highlight color="green">5,000+ members</Highlight>)</li>
-          <li>• Founded TalentOS, the verification layer for the labor market (<Highlight color="purple">10,000+ users</Highlight>)</li>
-          <li>• Grew media reach to <Highlight color="blue">450K+ followers</Highlight> and <Highlight color="blue">60M+ total views</Highlight></li>
-          <li>• Opened Myanmar&apos;s first physical spaces for builders and entrepreneurs</li>
-          <li>• Produced Myanmar&apos;s most famous tech podcast</li>
-        </ul>
+        <h3 className="mb-5 text-xs uppercase tracking-widest text-gray-400 font-medium">
+          Now
+        </h3>
+        <p className="text-lg leading-relaxed text-gray-700 md:text-xl">
+          I&apos;m in San Francisco. I studied Applied Economics. I read too much philosophy. I love storytelling. And I believe the fastest way to rebuild a country is to build systems that let everyone prove what they&apos;re capable of.
+        </p>
       </section>
 
       {/* Project Grid */}

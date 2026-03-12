@@ -14,13 +14,7 @@ const projects = [
     category: "project" as const,
     href: "https://www.talentosapp.com/",
   },
-  {
-    id: 101,
-    title: "TalentHunt",
-    description: "Hire the top 1% of Myanmar talent. Verified skills. Real work. Ready to deploy.",
-    category: "project" as const,
-    href: "https://www.talenthunt.so/",
-  },
+
   {
     id: 2,
     title: "Build Myanmar - Media",
