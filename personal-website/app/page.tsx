@@ -96,12 +96,9 @@ export default function Home() {
         <h3 className="mb-5 text-xs uppercase tracking-widest text-gray-400 font-medium">
           The Insight
         </h3>
-        <p className="text-lg leading-relaxed text-gray-700 md:text-xl">
-          That community showed me the same thing over and over: <span className="italic font-medium text-gray-900">96% of companies can&apos;t show ROI from AI. It&apos;s not a tool problem &mdash; it&apos;s a readiness problem.</span>
-        </p>
-        <div className="mt-5 space-y-5 text-lg leading-relaxed text-gray-700 md:text-xl">
+        <div className="space-y-5 text-lg leading-relaxed text-gray-700 md:text-xl">
           <p>
-            So I built <Highlight color="purple">TalentOS</Highlight> &mdash; the AI-native workforce readiness platform. We read your business goals, give every employee personalized AI missions tied to those goals, grade the output, and show managers exactly who&apos;s capable. <Highlight color="purple">15,000+ users</Highlight>. Now scaling into enterprise.
+            Now I&apos;m building <Highlight color="purple">TalentOS</Highlight> &mdash; the AI-native workforce readiness platform. We read your business goals, give every employee personalized AI missions tied to those goals, grade the output, and show managers exactly who&apos;s capable. <Highlight color="purple">15,000+ users</Highlight>. Now scaling into enterprise.
           </p>
         </div>
       </section>
