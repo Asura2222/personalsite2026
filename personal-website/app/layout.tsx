@@ -11,8 +11,8 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Personal Website",
-  description: "Builder, Philosopher, and Entrepreneur dedicated to rebuilding Myanmar",
+  title: "James Win — Philosopher Builder",
+  description: "Philosopher builder. Founder of TalentOS — AI teammates for every talent — and Build Myanmar, the country's largest tech community.",
 };
 
 export default function RootLayout({

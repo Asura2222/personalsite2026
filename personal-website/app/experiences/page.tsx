@@ -12,7 +12,7 @@ const experiences = [
     company: "TalentOS",
     period: "Jan 2025 - Present",
     location: "San Francisco Bay Area",
-    description: "TalentOS is the AI-native workforce readiness platform helping companies upskill their teams for the AI era. Employees complete personalized, AI-graded missions tied to business goals, tools, and workflows — so you can see real capability, not just completion certificates. 15,000+ users on the public platform with growing enterprise pilots (TalentOS Teams).",
+    description: "TalentOS builds AI teammates for every talent. We create and manage AI agents for everyone on the team, and help people collaborate with them in one shared workspace. The latest version, TalentOS v5, serves 15,000+ users with growing enterprise pilots.",
     highlight: "blue" as const,
   },
   {

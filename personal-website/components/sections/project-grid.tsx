@@ -10,7 +10,7 @@ const projects = [
   {
     id: 1,
     title: "TalentOS",
-    description: "TalentOS is the AI-native workforce readiness platform helping companies upskill their teams for the AI era. Employees complete personalized, AI-graded missions tied to business goals — so you can see real capability, not just completion certificates. 15,000+ users and growing enterprise pilots.",
+    description: "AI teammates for every talent. TalentOS creates and manages AI agents for everyone on the team, and helps people collaborate with them in one shared workspace. Latest version: TalentOS v5. 15,000+ users and growing enterprise pilots.",
     category: "project" as const,
     href: "https://www.talentosapp.com/",
   },
