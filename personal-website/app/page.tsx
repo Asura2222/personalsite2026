@@ -69,10 +69,10 @@ export default function Home() {
       {/* Hero Tagline */}
       <section className="mb-12">
         <h2 className="text-3xl font-bold mb-4 text-black">
-          Philosopher. Buddhist. Builder.
+          Philosopher Builder.
         </h2>
         <p className="text-xl leading-relaxed text-gray-700 md:text-2xl">
-          I grew up in Myanmar as a curious, insecure kid. The only way I knew how to prove myself was to <span className="font-semibold text-black">build things</span>.
+          I&apos;m interested in philosophy, history, and psychology. In another world, I would have studied them full-time. In this one, I&apos;m building <span className="font-semibold text-black">TalentOS</span>.
         </p>
       </section>
 
@@ -83,7 +83,7 @@ export default function Home() {
         </h3>
         <div className="space-y-5 text-lg leading-relaxed text-gray-700 md:text-xl">
           <p>
-            A project I started at 19 grew into something real. <Highlight color="blue">Build Myanmar</Highlight> became the country&apos;s largest tech community &mdash; <Highlight color="blue">450K+ followers</Highlight>, <Highlight color="blue">60M+ views</Highlight>, and <Highlight color="green">5,000 builders</Highlight> who showed up because someone finally made a place for them.
+            I started building at 19, back home in Myanmar. <Highlight color="blue">Build Myanmar</Highlight> grew into the country&apos;s largest tech community &mdash; <Highlight color="blue">450K+ followers</Highlight>, <Highlight color="blue">60M+ views</Highlight>, and <Highlight color="green">5,000 builders</Highlight> who showed up because someone finally made a place for them.
           </p>
           <p>
             We opened Myanmar&apos;s first physical spaces for builders and entrepreneurs, and produced the country&apos;s most famous tech podcast &mdash; giving a voice to the people actually doing the work.
@@ -91,14 +91,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The Insight */}
+      {/* What I'm Building */}
       <section className="mb-12">
         <h3 className="mb-5 text-xs uppercase tracking-widest text-gray-400 font-medium">
-          The Insight
+          What I&apos;m Building
         </h3>
         <div className="space-y-5 text-lg leading-relaxed text-gray-700 md:text-xl">
           <p>
-            Now I&apos;m building <Highlight color="purple">TalentOS</Highlight> &mdash; the AI-native workforce readiness platform. We read your business goals, give every employee personalized AI missions tied to those goals, grade the output, and show managers exactly who&apos;s capable. <Highlight color="purple">15,000+ users</Highlight>. Now scaling into enterprise.
+            <Highlight color="purple">TalentOS</Highlight> builds AI teammates for every talent. We create and manage AI agents for everyone on the team, and help people collaborate with them in one shared workspace. The latest version is <Highlight color="purple">TalentOS v5</Highlight> &mdash; 15,000+ users, now scaling into enterprise.
           </p>
         </div>
       </section>
@@ -109,7 +109,7 @@ export default function Home() {
           Now
         </h3>
         <p className="text-lg leading-relaxed text-gray-700 md:text-xl">
-          I&apos;m in San Francisco. I studied Applied Economics. I read too much philosophy. I love storytelling. And I believe the fastest way to rebuild a country is to build systems that let everyone prove what they&apos;re capable of.
+          I&apos;m based in San Francisco. I studied Applied Economics, and I still read philosophy, history, and psychology daily. I believe the fastest way to rebuild a country is to build systems that let everyone prove what they&apos;re capable of.
         </p>
       </section>
 
