@@ -1,5 +1,6 @@
 import { Highlight } from "@/components/ui/highlight";
 import { Briefcase } from "lucide-react";
+import Link from "next/link";
 
 export const metadata = {
   title: "Experiences | James Win",
@@ -12,7 +13,7 @@ const experiences = [
     company: "TalentOS",
     period: "Jan 2025 - Present",
     location: "San Francisco Bay Area",
-    description: "TalentOS builds AI teammates for every talent. We create and manage AI agents for everyone on the team, and help people collaborate with them in one shared workspace. The latest version, TalentOS v5, serves 15,000+ users with growing enterprise pilots.",
+    description: "TalentOS gives every talent a managed AI teammate. It lives in the chat app you already use, does real work through connected tools, and lets humans and agents collaborate in one session — governed, secure, and fully auditable. We're just getting started.",
     highlight: "blue" as const,
   },
   {
@@ -77,7 +78,7 @@ export default function Experiences() {
             I spend most of my time building systems that help people learn, build, and find meaningful work.
           </p>
           <p>
-            Right now, my focus is <Highlight color="blue">TalentOS</Highlight> and expanding <Highlight color="green">Build Myanmar</Highlight>&apos;s physical and digital infrastructure.
+            Right now, my focus is <Link href="https://www.talentosapp.com/" target="_blank" rel="noopener noreferrer"><Highlight color="blue">TalentOS</Highlight></Link> and expanding <Link href="https://buildmyanmar.org" target="_blank" rel="noopener noreferrer"><Highlight color="green">Build Myanmar</Highlight></Link>&apos;s physical and digital infrastructure.
           </p>
         </div>
       </section>

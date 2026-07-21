@@ -72,7 +72,7 @@ export default function Home() {
           Philosopher Builder.
         </h2>
         <p className="text-xl leading-relaxed text-gray-700 md:text-2xl">
-          I&apos;m interested in philosophy, history, and psychology. In another world, I would have studied them full-time. In this one, I&apos;m building <span className="font-semibold text-black">TalentOS</span>.
+          I&apos;m interested in philosophy, history, and psychology. In another world, I would have studied them full-time. In this one, I&apos;m building <Link href="https://www.talentosapp.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-black underline decoration-gray-300 underline-offset-4 transition-colors hover:decoration-black">TalentOS</Link>.
         </p>
       </section>
 
@@ -83,7 +83,7 @@ export default function Home() {
         </h3>
         <div className="space-y-5 text-lg leading-relaxed text-gray-700 md:text-xl">
           <p>
-            I started building at 19, back home in Myanmar. <Highlight color="blue">Build Myanmar</Highlight> grew into the country&apos;s largest tech community &mdash; <Highlight color="blue">450K+ followers</Highlight>, <Highlight color="blue">60M+ views</Highlight>, and <Highlight color="green">5,000 builders</Highlight> who showed up because someone finally made a place for them.
+            I started building at 19, back home in Myanmar. <Link href="https://buildmyanmar.org" target="_blank" rel="noopener noreferrer"><Highlight color="blue">Build Myanmar</Highlight></Link> grew into the country&apos;s largest tech community &mdash; <Highlight color="blue">450K+ followers</Highlight>, <Highlight color="blue">60M+ views</Highlight>, and <Highlight color="green">5,000 builders</Highlight> who showed up because someone finally made a place for them.
           </p>
           <p>
             We opened Myanmar&apos;s first physical spaces for builders and entrepreneurs, and produced the country&apos;s most famous tech podcast &mdash; giving a voice to the people actually doing the work.
@@ -98,7 +98,7 @@ export default function Home() {
         </h3>
         <div className="space-y-5 text-lg leading-relaxed text-gray-700 md:text-xl">
           <p>
-            <Highlight color="purple">TalentOS</Highlight> builds AI teammates for every talent. We create and manage AI agents for everyone on the team, and help people collaborate with them in one shared workspace. The latest version is <Highlight color="purple">TalentOS v5</Highlight> &mdash; 15,000+ users, now scaling into enterprise.
+            <Link href="https://www.talentosapp.com/" target="_blank" rel="noopener noreferrer"><Highlight color="purple">TalentOS</Highlight></Link> gives every talent a managed AI teammate. It lives in the chat app you already use, does real work through your connected tools, and lets humans and agents collaborate in one session &mdash; governed, secure, and fully auditable. We&apos;re just getting started.
           </p>
         </div>
       </section>

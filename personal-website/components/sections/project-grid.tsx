@@ -10,7 +10,7 @@ const projects = [
   {
     id: 1,
     title: "TalentOS",
-    description: "AI teammates for every talent. TalentOS creates and manages AI agents for everyone on the team, and helps people collaborate with them in one shared workspace. Latest version: TalentOS v5. 15,000+ users and growing enterprise pilots.",
+    description: "A managed AI teammate for every talent. It lives in the chat app you already use, does real work through your connected tools, and keeps humans and agents collaborating in one session — governed, secure, and auditable.",
     category: "project" as const,
     href: "https://www.talentosapp.com/",
   },
