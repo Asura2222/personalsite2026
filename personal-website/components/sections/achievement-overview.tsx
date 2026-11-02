@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ArrowUpRight, Github } from "lucide-react";
 import activity from "@/content/activity/github.json";
 import profileProof from "@/content/activity/profile-proof.json";
+import githubCalendar from "@/public/evidence/github-calendar-2026-11-01.png";
 
 const snapshotDateFormatter = new Intl.DateTimeFormat("en-US", {
   month: "short",
@@ -44,12 +45,10 @@ export function AchievementOverview() {
           </div>
           <figure className="pv-contribution-figure">
             <Image
-              src={profileProof.image}
-              width={1070}
-              height={180}
-              sizes="(max-width: 900px) 100vw, 480px"
+              src={githubCalendar}
+              unoptimized
               className="pv-github-snapshot"
-              alt="Actual GitHub profile contribution calendar supplied by James Win, November 1, 2026. Includes private activity."
+              alt="James Win's GitHub contribution calendar, including private activity, recorded November 1, 2026."
             />
             <figcaption>
               <span>Actual GitHub calendar · Nov 1, 2026</span>

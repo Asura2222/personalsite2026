@@ -36,7 +36,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "A multiplayer AI workspace where people and their agents work together.",
     outcome: "$120K raised from angel investors",
     role: "Co-founder & CEO · Product & engineering",
-    period: "2025 — 2026",
+    period: "2025 — Present",
     skills: ["Technical", "Product", "Marketing"],
     tools: [
       "TypeScript",
@@ -146,7 +146,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Co-led the Human Flourishing Floor and helped grow membership from 120 to 600+.",
     outcome: "120 → 600+ members",
     role: "Co-lead · Part-time",
-    period: "From Sep 2025",
+    period: "2025 — 2026",
     skills: ["Operations", "Marketing", "Speaking & Events"],
     tools: [
       "Community growth",

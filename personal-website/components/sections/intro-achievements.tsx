@@ -12,7 +12,7 @@ export function IntroAchievements() {
             </Link>
             <span>Building the future of work</span>
           </h2>
-          <time>2025 — 2026</time>
+          <time>2025 — Present</time>
         </div>
         <ul>
           <li>
@@ -44,7 +44,7 @@ export function IntroAchievements() {
             </Link>
             <span>Human Flourishing Floor · Co-lead</span>
           </h2>
-          <time>From Sep 2025</time>
+          <time>2025 — 2026</time>
         </div>
         <ul>
           <li>
