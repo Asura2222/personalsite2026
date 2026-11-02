@@ -3,13 +3,13 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Command } from "cmdk";
+import { XLogo } from "@/components/x-logo";
 import {
   Home,
   BookOpen,
   Mic,
   Youtube,
   Mail,
-  Twitter,
   Linkedin,
   Github,
 } from "lucide-react";
@@ -141,8 +141,8 @@ export function CommandMenu() {
                     }
                     className="flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors hover:bg-gray-100"
                   >
-                    <Twitter className="h-4 w-4" />
-                    <span>Twitter / X</span>
+                    <XLogo className="h-4 w-4" />
+                    <span>X / Twitter</span>
                   </Command.Item>
                   <Command.Item
                     onSelect={() =>

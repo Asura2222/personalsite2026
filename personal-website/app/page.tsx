@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
 import { PortfolioExplorer } from "@/components/sections/portfolio-explorer";
 import { AchievementOverview } from "@/components/sections/achievement-overview";
 import { IntroAchievements } from "@/components/sections/intro-achievements";
 import { SkillsTools } from "@/components/sections/skills-tools";
 import { StructuredData } from "@/components/structured-data";
+import { XLogo } from "@/components/x-logo";
 import { pageMetadata, profileSchema } from "@/lib/site";
 
 export const metadata = pageMetadata(
@@ -38,9 +39,9 @@ export default function Home() {
           <nav aria-label="Find me online">
             <a
               href="https://x.com/win22james"
-              aria-label="James Win on Twitter / X: @win22james"
+              aria-label="James Win on X: @win22james"
             >
-              <Twitter size={19} />
+              <XLogo />
             </a>
             <a
               href="https://github.com/Asura2222"
