@@ -1246,11 +1246,30 @@
   font-size: 16px;
   letter-spacing: -0.025em;
 }
-.pv-track-heading h2 > a {
+.pv-track-heading h2 > .pv-track-title {
   display: inline-flex;
-  gap: 5px;
   align-items: center;
+  color: var(--pv-ink);
+  font-size: inherit;
   font-weight: 650;
+  letter-spacing: inherit;
+}
+.pv-track-case {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  min-height: 44px;
+  flex: 0 0 44px;
+}
+.pv-track-title > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.pv-track-case:hover {
+  background: var(--pv-line);
+  border-radius: 4px;
 }
 .pv-track-heading h2 > span {
   font-size: 11px;

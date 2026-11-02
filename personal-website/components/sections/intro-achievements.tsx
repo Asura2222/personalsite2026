@@ -7,10 +7,17 @@ export function IntroAchievements() {
       <section className="pv-track" aria-labelledby="talentos-track">
         <div className="pv-track-heading">
           <h2 id="talentos-track">
-            <Link href="/work/talentos">
-              TalentOS <ArrowUpRight size={15} />
-            </Link>
-            <span>Building the future of work</span>
+            <span className="pv-track-title">
+              <a href="https://talentos.so/">TalentOS</a>
+              <Link
+                href="/work/talentos"
+                className="pv-track-case"
+                aria-label="Read the TalentOS case study"
+              >
+                <ArrowUpRight size={15} aria-hidden="true" />
+              </Link>
+            </span>
+            <span>Co-founder · Building the future of work</span>
           </h2>
           <time>2025 — Present</time>
         </div>
@@ -39,9 +46,16 @@ export function IntroAchievements() {
       <section className="pv-track" aria-labelledby="frontier-track">
         <div className="pv-track-heading">
           <h2 id="frontier-track">
-            <Link href="/work/frontier-tower">
-              Frontier Tower <ArrowUpRight size={15} />
-            </Link>
+            <span className="pv-track-title">
+              <a href="https://frontiertower.io/">Frontier Tower</a>
+              <Link
+                href="/work/frontier-tower"
+                className="pv-track-case"
+                aria-label="Read the Frontier Tower case study"
+              >
+                <ArrowUpRight size={15} aria-hidden="true" />
+              </Link>
+            </span>
             <span>Human Flourishing Floor · Co-lead</span>
           </h2>
           <time>2025 — 2026</time>
@@ -61,10 +75,17 @@ export function IntroAchievements() {
       <section className="pv-track" aria-labelledby="myanmar-track">
         <div className="pv-track-heading">
           <h2 id="myanmar-track">
-            <Link href="/work/build-myanmar-media">
-              Build Myanmar <ArrowUpRight size={15} />
-            </Link>
-            <span>Technology, media & community</span>
+            <span className="pv-track-title">
+              <a href="https://www.buildmyanmarmedia.com/">Build Myanmar</a>
+              <Link
+                href="/work/build-myanmar-media"
+                className="pv-track-case"
+                aria-label="Read the Build Myanmar case study"
+              >
+                <ArrowUpRight size={15} aria-hidden="true" />
+              </Link>
+            </span>
+            <span>Founder · Technology, media & community</span>
           </h2>
           <time>2023 — 2025</time>
         </div>
@@ -95,9 +116,18 @@ export function IntroAchievements() {
       <section className="pv-track" aria-labelledby="book-track">
         <div className="pv-track-heading">
           <h2 id="book-track">
-            <Link href="/work/the-glitch-network">
-              How to Become a Glitch <ArrowUpRight size={15} />
-            </Link>
+            <span className="pv-track-title">
+              <a href="https://www.amazon.com/How-Become-Glitch-369-Labs/dp/B0CR9GNDJN">
+                How to Become a Glitch
+              </a>
+              <Link
+                href="/work/the-glitch-network"
+                className="pv-track-case"
+                aria-label="Read the How to Become a Glitch case study"
+              >
+                <ArrowUpRight size={15} aria-hidden="true" />
+              </Link>
+            </span>
             <span>Author · The Glitch Network</span>
           </h2>
           <time>2023</time>
