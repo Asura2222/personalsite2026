@@ -69,19 +69,19 @@ export function AchievementOverview() {
         <section className="pv-audience" aria-labelledby="audience-title">
           <h3 id="audience-title">Building an audience</h3>
           <div className="pv-platforms">
-            <Link href="/work/build-myanmar-media">
+            <Link href="/work/build-myanmar">
               <strong>230K+</strong>
               <span>
                 Facebook followers <ArrowUpRight size={12} />
               </span>
             </Link>
-            <Link href="/work/build-myanmar-media">
+            <Link href="/work/build-myanmar">
               <strong>140K+</strong>
               <span>
                 TikTok followers <ArrowUpRight size={12} />
               </span>
             </Link>
-            <Link href="/work/build-myanmar-media">
+            <Link href="/work/build-myanmar">
               <strong>91K+</strong>
               <span>
                 YouTube subscribers <ArrowUpRight size={12} />
@@ -89,11 +89,11 @@ export function AchievementOverview() {
             </Link>
           </div>
           <div className="pv-community-milestone">
-            <Link href="/work/build-myanmar-spaces">
+            <Link href="/work/build-myanmar#community-spaces">
               <strong>5,000+</strong> community members
             </Link>
             <span>·</span>
-            <Link href="/work/build-myanmar-spaces">
+            <Link href="/work/build-myanmar#community-spaces">
               <strong>2</strong> physical spaces
             </Link>
           </div>

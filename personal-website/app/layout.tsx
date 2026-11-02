@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import "./portfolio.css";
+import "./contributions.css";
 import { siteOrigin } from "@/lib/site";
 import { Sidebar } from "@/components/layout/sidebar";
 import { CommandMenu } from "@/components/layout/cmdk-dialog";

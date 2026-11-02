@@ -27,7 +27,7 @@ export function IntroAchievements() {
             angels from Google, Meta, Samsung, and AGI House.
           </li>
           <li>
-            <Link href="/work/ai-career-product">
+            <Link href="/work/talentos#career-product">
               Built and grew our first AI career product to{" "}
               <mark className="pv-mark pv-mark-purple">15,000 users</mark> and{" "}
               <mark className="pv-mark pv-mark-purple">$200K ARR</mark>.
@@ -49,7 +49,7 @@ export function IntroAchievements() {
             <span className="pv-track-title">
               <a href="https://frontiertower.io/">Frontier Tower</a>
               <Link
-                href="/work/frontier-tower"
+                href="/work/community-and-speaking#frontier-tower"
                 className="pv-track-case"
                 aria-label="Read the Frontier Tower case study"
               >
@@ -78,7 +78,7 @@ export function IntroAchievements() {
             <span className="pv-track-title">
               <a href="https://www.buildmyanmarmedia.com/">Build Myanmar</a>
               <Link
-                href="/work/build-myanmar-media"
+                href="/work/build-myanmar"
                 className="pv-track-case"
                 aria-label="Read the Build Myanmar case study"
               >
@@ -95,7 +95,7 @@ export function IntroAchievements() {
             <mark className="pv-mark pv-mark-green">team of 30</mark>.
           </li>
           <li>
-            <Link href="/work/build-myanmar-media">
+            <Link href="/work/build-myanmar">
               Built our media channels to{" "}
               <mark className="pv-mark pv-mark-green">450K+ followers</mark>{" "}
               across Facebook, TikTok, and YouTube.
@@ -103,7 +103,7 @@ export function IntroAchievements() {
             </Link>
           </li>
           <li>
-            <Link href="/work/build-myanmar-spaces">
+            <Link href="/work/build-myanmar#community-spaces">
               Opened{" "}
               <mark className="pv-mark pv-mark-green">two physical spaces</mark>{" "}
               for a community of{" "}

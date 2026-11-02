@@ -4,11 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, LayoutGrid, List, Search } from "lucide-react";
 import { portfolioProjects, skills, type Skill } from "@/lib/portfolio";
-import {
-  appearances,
-  featuredAppearances,
-  type Appearance,
-} from "@/lib/appearances";
+import { appearances, type Appearance } from "@/lib/appearances";
 
 interface WorkEntry {
   id: string;
@@ -19,21 +15,34 @@ interface WorkEntry {
   skills: Skill[];
   outcome: string;
   accent: string;
+  highlights?: string[];
   searchText: string;
 }
 
 const projects: WorkEntry[] = portfolioProjects.map((project) => ({
   ...project,
+  summary: `${project.summary} ${project.contribution}`,
   id: project.slug,
   href: `/work/${project.slug}`,
   searchText: [
     project.title,
     project.category,
     project.summary,
+    project.contribution,
+    project.story,
+    project.team ?? "",
+    project.distinctive,
     project.role,
     project.challenge,
     ...project.skills,
     ...project.tools,
+    ...project.searchAliases,
+    ...project.areas.flatMap((area) => [
+      area.title,
+      area.summary,
+      ...area.details,
+      ...area.skills,
+    ]),
   ]
     .join(" ")
     .toLocaleLowerCase(),
@@ -68,7 +77,7 @@ export function PortfolioExplorer() {
   const [view, setView] = useState<"list" | "grid">("list");
   const search = query.trim().toLocaleLowerCase();
   const eventEntries = (
-    skill === "Speaking & Events" || search ? appearances : featuredAppearances
+    skill === "Speaking & Events" || search ? appearances : []
   ).map(appearanceEntry);
   const matches = [...projects, ...eventEntries].filter(
     (entry) =>
@@ -167,7 +176,7 @@ export function PortfolioExplorer() {
               </h3>
               <p className="pv-project-summary">{project.summary}</p>
               <div className="pv-tags">
-                {project.skills.map((tag) => (
+                {(project.highlights ?? project.skills).map((tag) => (
                   <span key={tag}>{tag}</span>
                 ))}
               </div>

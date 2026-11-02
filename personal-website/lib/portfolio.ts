@@ -1,3 +1,8 @@
+import {
+  projectContributions,
+  type ContributionArea,
+} from "@/lib/project-contributions";
+
 export const skills = [
   "All work",
   "Technical",
@@ -9,7 +14,7 @@ export const skills = [
 ] as const;
 export type Skill = (typeof skills)[number];
 
-export interface PortfolioProject {
+interface ProjectSeed {
   slug: string;
   title: string;
   category: string;
@@ -27,7 +32,7 @@ export interface PortfolioProject {
   accent: "purple" | "blue" | "green" | "yellow";
 }
 
-export const portfolioProjects: PortfolioProject[] = [
+const projectSeeds: ProjectSeed[] = [
   {
     slug: "talentos",
     title: "TalentOS",
@@ -331,6 +336,85 @@ export const portfolioProjects: PortfolioProject[] = [
   },
 ];
 
+export interface PortfolioProject extends ProjectSeed {
+  areas: ContributionArea[];
+  results: { value: string; label: string }[];
+  distinctive: string;
+  highlights: string[];
+  searchAliases: string[];
+  story: string;
+  team?: string;
+  contributionHeading: string;
+  credit?: string;
+}
+
+export const portfolioProjects: PortfolioProject[] = projectContributions.map(
+  (contribution) => {
+    const source = projectSeeds.find(
+      (project) =>
+        project.slug === (contribution.sourceSlug ?? contribution.slug),
+    )!;
+    return {
+      ...source,
+      slug: contribution.slug,
+      title: contribution.displayTitle ?? source.title,
+      summary: contribution.lede ?? source.summary,
+      role: contribution.role ?? source.role,
+      outcome: contribution.resultSummary ?? source.outcome,
+      contribution: contribution.ownership,
+      areas: contribution.areas,
+      results: contribution.results,
+      distinctive: contribution.distinctive ?? "",
+      highlights: contribution.highlights ?? [],
+      searchAliases: contribution.searchAliases ?? [],
+      story: contribution.story ?? source.summary,
+      team: contribution.team,
+      contributionHeading:
+        contribution.contributionHeading ?? "My contributions",
+      credit: contribution.credit,
+      links: contribution.links ?? source.links,
+      tools: [...new Set(contribution.areas.flatMap((area) => area.skills))],
+      skills:
+        contribution.slug === "community-and-speaking"
+          ? [...new Set<Skill>([...source.skills, "Marketing"])]
+          : source.skills,
+    };
+  },
+);
+
+export const portfolioAliases: Record<
+  string,
+  { slug: string; anchor?: string }
+> = {
+  "ai-career-product": { slug: "talentos", anchor: "career-product" },
+  "personal-ai-assistant": { slug: "talentos", anchor: "agent-harness" },
+  "build-myanmar-media": { slug: "build-myanmar" },
+  "build-myanmar-spaces": { slug: "build-myanmar", anchor: "community-spaces" },
+  "frontier-tower": {
+    slug: "community-and-speaking",
+    anchor: "frontier-tower",
+  },
+  "events-and-salons": { slug: "community-and-speaking" },
+};
+
 export function getPortfolioProject(slug: string) {
-  return portfolioProjects.find((project) => project.slug === slug);
+  const canonicalSlug = portfolioAliases[slug]?.slug ?? slug;
+  return portfolioProjects.find((project) => project.slug === canonicalSlug);
+}
+
+export function projectHref(slug: string) {
+  const target = portfolioAliases[slug];
+  return target
+    ? `/work/${target.slug}${target.anchor ? `#${target.anchor}` : ""}`
+    : `/work/${slug}`;
+}
+
+export function contributionAreaId(area: ContributionArea) {
+  return (
+    area.id ??
+    area.title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "")
+  );
 }

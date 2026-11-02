@@ -1,10 +1,56 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
-import { getPortfolioProject, portfolioProjects } from "@/lib/portfolio";
+import { notFound, permanentRedirect } from "next/navigation";
+import { ArrowLeft, ArrowUpRight, ChevronDown } from "lucide-react";
+import {
+  contributionAreaId,
+  getPortfolioProject,
+  portfolioProjects,
+  projectHref,
+} from "@/lib/portfolio";
 import { pageMetadata, personId, siteOrigin } from "@/lib/site";
 import { StructuredData } from "@/components/structured-data";
+import type { ContributionArea } from "@/lib/project-contributions";
+
+function ContributionAreas({ areas }: { areas: ContributionArea[] }) {
+  return (
+    <div className="cp-areas">
+      {areas.map((area, index) => (
+        <details
+          className="cp-area"
+          id={contributionAreaId(area)}
+          key={area.title}
+        >
+          <summary>
+            <span className="cp-number" aria-hidden="true">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <span className="cp-area-heading">
+              <strong>{area.title}</strong>
+              <span>{area.summary}</span>
+            </span>
+            <ChevronDown size={17} aria-hidden="true" className="cp-chevron" />
+          </summary>
+          <div className="cp-area-content">
+            <ul>
+              {area.details.map((detail) => (
+                <li key={detail}>{detail}</li>
+              ))}
+            </ul>
+            <ul
+              className="cp-skills"
+              aria-label={`Skills and tools for ${area.title}`}
+            >
+              {area.skills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+          </div>
+        </details>
+      ))}
+    </div>
+  );
+}
 
 export function generateStaticParams() {
   return portfolioProjects.map(({ slug }) => ({ slug }));
@@ -20,7 +66,7 @@ export async function generateMetadata({
   return project
     ? pageMetadata(
         `${project.title} | James Win`,
-        project.summary,
+        project.contribution,
         `/work/${project.slug}`,
       )
     : { title: "Project not found" };
@@ -34,9 +80,14 @@ export default async function ProjectPage({
   const { slug } = await params;
   const project = getPortfolioProject(slug);
   if (!project) notFound();
-  const otherProjects = portfolioProjects
-    .filter((item) => item.slug !== slug)
-    .slice(0, 2);
+  if (project.slug !== slug) permanentRedirect(projectHref(slug));
+  const otherProjects = portfolioProjects.filter((item) => item.slug !== slug);
+  const primaryAreas = project.areas.filter((area) => !area.group);
+  const secondaryGroups = [
+    ...new Set(
+      project.areas.flatMap((area) => (area.group ? [area.group] : [])),
+    ),
+  ];
 
   return (
     <div className="portfolio-preview">
@@ -48,7 +99,7 @@ export default async function ProjectPage({
               "@type": slug === "the-glitch-network" ? "Book" : "CreativeWork",
               "@id": `${siteOrigin}/work/${slug}#work`,
               name: project.title,
-              description: project.summary,
+              description: project.contribution,
               url: `${siteOrigin}/work/${slug}`,
               author: {
                 "@type": "Person",
@@ -70,8 +121,8 @@ export default async function ProjectPage({
                 {
                   "@type": "ListItem",
                   position: 1,
-                  name: "James Win",
-                  item: `${siteOrigin}/`,
+                  name: "James Win — Selected work",
+                  item: `${siteOrigin}/#work`,
                 },
                 {
                   "@type": "ListItem",
@@ -84,136 +135,89 @@ export default async function ProjectPage({
           ],
         }}
       />
-      <article className={`pv-page pv-case pv-accent-${project.accent}`}>
-        <Link href="/#work" className="pv-back">
-          <ArrowLeft size={15} /> All work
-        </Link>
-        <header className="pv-case-header">
+      <article className={`pv-page cp-page pv-accent-${project.accent}`}>
+        <div className="cp-preview-bar">
+          <Link href="/#work">
+            <ArrowLeft size={14} aria-hidden="true" /> Selected work
+          </Link>
+        </div>
+        <header className="cp-case-header">
           <p className="pv-eyebrow">{project.category}</p>
           <h1>
             {project.title}
             <span className="pv-period">.</span>
           </h1>
-          <p className="pv-case-summary">{project.summary}</p>
-          <p className="pv-case-outcome">{project.outcome}</p>
+          <p className="cp-lead">{project.story}</p>
+          <div className="cp-role-line">
+            <span>{project.role}</span>
+            {project.team && <span>{project.team}</span>}
+            <span>{project.period}</span>
+          </div>
+          {project.credit && <p className="cp-case-credit">{project.credit}</p>}
         </header>
-        <dl className="pv-case-facts">
-          <div>
-            <dt>My role</dt>
-            <dd>{project.role}</dd>
-          </div>
-          <div>
-            <dt>Chapter</dt>
-            <dd>{project.period}</dd>
-          </div>
-          <div>
-            <dt>What it brings together</dt>
-            <dd>{project.skills.join(" · ")}</dd>
-          </div>
-        </dl>
-        <div className="pv-case-body">
-          <section>
-            <h2>The idea</h2>
-            <p>{project.intro}</p>
-          </section>
-          <section>
-            <h2>What I worked on</h2>
-            <p>{project.contribution}</p>
-          </section>
-          <section className="pv-challenge">
-            <p className="pv-eyebrow">Behind the simple explanation</p>
-            <h2>What made it hard</h2>
-            <p>{project.challenge}</p>
-          </section>
-          {slug === "talentos" && (
-            <figure
-              className="pv-architecture"
-              aria-label="TalentOS collaboration model"
-            >
-              <div className="pv-architecture-top">
-                <span>People</span>
-                <span>Their AI teammates</span>
-                <span>External agents</span>
-              </div>
-              <div className="pv-architecture-flow" aria-hidden="true">
-                ↓
-              </div>
-              <div className="pv-architecture-room">
-                <strong>One shared Room</strong>
-                <span>Conversation · Context · Files</span>
-              </div>
-              <div className="pv-architecture-flow" aria-hidden="true">
-                ↓
-              </div>
-              <div className="pv-architecture-bottom">
-                Permissions & approvals → Work people can use
-              </div>
-              <figcaption>
-                A simplified product model. Agent capabilities vary by
-                integration and release.
-              </figcaption>
-            </figure>
-          )}
-          {project.decisions.length > 0 && (
-            <section>
-              <h2>
-                {slug === "talentos"
-                  ? "Decisions behind the product"
-                  : "The approach"}
-              </h2>
-              <div className="pv-decisions">
-                {project.decisions.map((decision, i) => (
-                  <div key={decision.title}>
-                    <span className="pv-decision-number">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <div>
-                      <h3>{decision.title}</h3>
-                      <p>{decision.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
-          <section>
-            <h2>
-              {project.skills.includes("Technical")
-                ? "Skills & tech stack"
-                : "Skills & methods"}
-            </h2>
-            <ul className="pv-tool-list">
-              {project.tools.map((tool) => (
-                <li key={tool}>{tool}</li>
-              ))}
-            </ul>
-          </section>
-          <section>
-            <h2>
-              {slug === "personal-ai-assistant"
-                ? "Talk about the build"
-                : "See the work"}
-            </h2>
-            <div className="pv-proof-links">
-              {project.links.map((link) => (
-                <a className="pv-text-link" key={link.href} href={link.href}>
-                  {link.label} <ArrowUpRight size={16} />
-                </a>
-              ))}
+        <dl className="cp-results">
+          {project.results.map((result) => (
+            <div key={result.label}>
+              <dt>{result.label}</dt>
+              <dd>{result.value}</dd>
             </div>
-          </section>
-        </div>
-        <footer className="pv-case-next">
-          <h2>Another side of the work</h2>
-          {otherProjects.map((other) => (
-            <Link key={other.slug} href={`/work/${other.slug}`}>
-              {other.title}
-              <ArrowUpRight size={18} />
-            </Link>
           ))}
-          <a href="mailto:win@talentos.so">
-            Email me <ArrowUpRight size={18} />
-          </a>
+        </dl>
+        <section
+          className="cp-contributions"
+          aria-labelledby="contributions-title"
+        >
+          <div className="cp-section-heading">
+            <h2 id="contributions-title">{project.contributionHeading}</h2>
+            <span>{String(primaryAreas.length).padStart(2, "0")} areas</span>
+          </div>
+          <p className="cp-contribution-summary">{project.contribution}</p>
+          <ContributionAreas areas={primaryAreas} />
+        </section>
+        {secondaryGroups.map((group) => (
+          <section className="cp-contributions" key={group} aria-label={group}>
+            <div className="cp-section-heading">
+              <h2>{group}</h2>
+            </div>
+            <ContributionAreas
+              areas={project.areas.filter((area) => area.group === group)}
+            />
+          </section>
+        ))}
+        <section className="cp-ownership" aria-labelledby="distinctive-title">
+          <h2 id="distinctive-title">What makes it different</h2>
+          <p>{project.distinctive}</p>
+        </section>
+        <section
+          className="cp-project-links"
+          aria-labelledby="project-links-title"
+        >
+          <h2 id="project-links-title">See the work</h2>
+          <div>
+            {project.links.map((link) => (
+              <a key={link.href} href={link.href}>
+                {link.label}
+                <ArrowUpRight size={15} aria-hidden="true" />
+              </a>
+            ))}
+          </div>
+          {slug === "community-and-speaking" && (
+            <Link href="/speaking" className="cp-current-page">
+              Full speaking & events archive{" "}
+              <ArrowUpRight size={13} aria-hidden="true" />
+            </Link>
+          )}
+        </section>
+        <footer className="cp-next-projects">
+          <h2>More selected work</h2>
+          <div>
+            {otherProjects.map((other) => (
+              <Link key={other.slug} href={`/work/${other.slug}`}>
+                {other.title}
+                <ArrowUpRight size={15} aria-hidden="true" />
+              </Link>
+            ))}
+          </div>
         </footer>
       </article>
     </div>

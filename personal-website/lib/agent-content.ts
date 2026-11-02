@@ -64,7 +64,9 @@ ${portfolioProjects
     (project) => `### ${project.title}
 
 - Role: ${project.role}
+${project.team ? `- Team: ${project.team}` : ""}
 - Period: ${project.period}
+- Contribution: ${project.contribution}
 - Result: ${project.outcome}
 - Summary: ${project.summary}
 - ${link("Case study", url(`/work/${project.slug}`))}
@@ -100,9 +102,16 @@ ${skillGroups.map((group) => `### ${group.title}\n\n${group.description}.\n\nToo
 }
 
 export function projectMarkdown(project: PortfolioProject): string {
+  const renderArea = (area: PortfolioProject["areas"][number]) =>
+    `### ${area.title}\n\n${area.summary}\n\n${area.details.map((detail) => `- ${detail}`).join("\n")}\n\nSkills and tools: ${area.skills.join(", ")}.`;
+  const secondaryGroups = [
+    ...new Set(
+      project.areas.flatMap((area) => (area.group ? [area.group] : [])),
+    ),
+  ];
   return `# ${project.title}
 
-> ${project.summary}
+> ${project.contribution}
 
 Canonical page: ${url(`/work/${project.slug}`)}
 
@@ -110,21 +119,39 @@ Canonical page: ${url(`/work/${project.slug}`)}
 - Category: ${project.category}
 - Role: ${project.role}
 - Period: ${project.period}
+${project.team ? `- Team: ${project.team}\n` : ""}
 - Result: ${project.outcome}
 - Skills: ${project.skills.join(", ")}
 
-## The idea
+## The project
 
-${project.intro}
+${project.story}
 
-## James's contribution
+## What makes it different
 
-${project.contribution}
+${project.distinctive}
 
-## What made it hard
+## Results
 
-${project.challenge}
-${project.decisions.length ? `\n## The approach\n\n${project.decisions.map((decision) => `### ${decision.title}\n\n${decision.description}`).join("\n\n")}\n` : ""}
+${project.results.map((result) => `- ${result.value}: ${result.label}`).join("\n")}
+
+## ${project.contributionHeading}
+
+${project.areas
+  .filter((area) => !area.group)
+  .map(renderArea)
+  .join("\n\n")}
+${secondaryGroups
+  .map(
+    (group) =>
+      `\n## ${group}\n\n${project.areas
+        .filter((area) => area.group === group)
+        .map(renderArea)
+        .join("\n\n")}`,
+  )
+  .join("\n")}
+${project.credit ? `\nTeam credit: ${project.credit}\n` : ""}
+
 ## Skills, tools, and methods
 
 ${project.tools.map((tool) => `- ${tool}`).join("\n")}
