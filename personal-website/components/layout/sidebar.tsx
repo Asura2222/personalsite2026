@@ -19,17 +19,21 @@ export function Sidebar() {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:z-50 lg:block lg:w-36 lg:overflow-y-auto">
-        <nav className="flex h-full flex-col items-end justify-center pr-8">
-          <ul className="space-y-6">
+      <aside className="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:z-50 lg:block lg:w-48 lg:overflow-y-auto">
+        <nav
+          aria-label="Main navigation"
+          className="flex min-h-full flex-col justify-center px-6 py-8"
+        >
+          <ul className="w-full space-y-2">
             {navigation.map((item) => (
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className={`text-sm lowercase tracking-wide transition-colors ${
+                  aria-current={pathname === item.href ? "page" : undefined}
+                  className={`flex min-h-11 items-center whitespace-nowrap rounded px-2 py-2 text-sm leading-5 lowercase tracking-wide transition-colors ${
                     pathname === item.href
                       ? "text-black"
-                      : "text-gray-400 hover:text-black"
+                      : "text-gray-500 hover:text-black"
                   }`}
                 >
                   {item.name}
@@ -63,17 +67,21 @@ export function Sidebar() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-40 bg-white lg:hidden">
-          <nav className="flex h-full flex-col items-center justify-center">
+          <nav
+            aria-label="Mobile navigation"
+            className="flex h-full flex-col items-center justify-center"
+          >
             <ul className="space-y-8">
               {navigation.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
+                    aria-current={pathname === item.href ? "page" : undefined}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`text-2xl lowercase tracking-wide transition-colors ${
+                    className={`flex min-h-11 items-center whitespace-nowrap text-2xl lowercase tracking-wide transition-colors ${
                       pathname === item.href
                         ? "text-black"
-                        : "text-gray-400 hover:text-black"
+                        : "text-gray-500 hover:text-black"
                     }`}
                   >
                     {item.name}

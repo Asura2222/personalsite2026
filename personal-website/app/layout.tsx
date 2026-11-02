@@ -40,7 +40,7 @@ export default function RootLayout({
         <a href="#main-content" className="skip-link">
           Skip to content
         </a>
-        <main id="main-content" className="lg:pl-36">
+        <main id="main-content" className="lg:pl-48">
           <div className="px-6 pb-16 pt-24 lg:px-12 lg:py-24">{children}</div>
         </main>
       </body>
