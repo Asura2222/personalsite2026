@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowUpRight, ChevronDown } from "lucide-react";
 import {
   contributionAreaId,
   getPortfolioProject,
+  portfolioAliases,
   portfolioProjects,
   projectHref,
 } from "@/lib/portfolio";
@@ -53,7 +54,10 @@ function ContributionAreas({ areas }: { areas: ContributionArea[] }) {
 }
 
 export function generateStaticParams() {
-  return portfolioProjects.map(({ slug }) => ({ slug }));
+  return [
+    ...portfolioProjects.map(({ slug }) => ({ slug })),
+    ...Object.keys(portfolioAliases).map((slug) => ({ slug })),
+  ];
 }
 
 export async function generateMetadata({
