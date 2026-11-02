@@ -172,7 +172,7 @@ export const portfolioProjects: PortfolioProject[] = [
         label: "My co-lead announcement",
         href: "https://www.linkedin.com/posts/james-win_i-officially-became-a-co-lead-of-the-human-activity-7372417919814889472-dzBf",
       },
-      { label: "Frontier Tower", href: "https://x.com/frontiertower" },
+      { label: "Frontier Tower website", href: "https://frontiertower.io/" },
       { label: "My hosted events", href: "https://luma.com/user/win22" },
     ],
     accent: "blue",
@@ -208,6 +208,10 @@ export const portfolioProjects: PortfolioProject[] = [
       },
     ],
     links: [
+      {
+        label: "Build Myanmar Media",
+        href: "https://www.buildmyanmarmedia.com/",
+      },
       {
         label: "How the channel reached 10K subscribers",
         href: "https://monkeynews.substack.com/p/how-build-myanmar-channel-got-10k",
