@@ -1258,21 +1258,6 @@
   letter-spacing: 0;
   color: var(--pv-muted);
 }
-.pv-track-site-label {
-  margin-left: 3px;
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0;
-  color: var(--pv-muted);
-}
-.pv-track-details {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  min-height: 44px;
-  font-size: 11px;
-  font-weight: 500;
-}
 .pv-track-heading time {
   font-size: 11px;
   color: var(--pv-muted);

@@ -27,6 +27,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="describedby"
+          href={`${siteOrigin}/llms.txt`}
+          type="text/markdown"
+        />
+      </head>
       <body className={`${manrope.variable} font-sans antialiased`}>
         <Sidebar />
         <CommandMenu />

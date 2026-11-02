@@ -10,10 +10,27 @@ export function pageMetadata(
   path: string,
 ): Metadata {
   const url = new URL(path, siteOrigin).toString();
+  const markdownPath =
+    path === "/"
+      ? "/index.md"
+      : path === "/speaking" ||
+          path === "/writings" ||
+          path.startsWith("/work/")
+        ? `${path}/index.md`
+        : null;
   return {
     title,
     description,
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      ...(markdownPath
+        ? {
+            types: {
+              "text/markdown": new URL(markdownPath, siteOrigin).toString(),
+            },
+          }
+        : {}),
+    },
     openGraph: {
       title,
       description,
