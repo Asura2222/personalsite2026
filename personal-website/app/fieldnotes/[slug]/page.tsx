@@ -4,6 +4,8 @@ import { MDXContent } from "@/components/ui/mdx-content";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
+export const metadata = { robots: { index: false, follow: true } };
+
 export async function generateStaticParams() {
   const posts = getAllPosts();
   return posts.map((post) => ({
@@ -29,11 +31,11 @@ export default async function BlogPost({ params }: PageProps) {
     <div className="mx-auto max-w-3xl">
       {/* Back Link */}
       <Link
-        href="/fieldnotes"
+        href="/writings"
         className="mb-8 inline-flex items-center gap-2 text-sm text-gray-600 transition-colors hover:text-black dark:text-gray-400 dark:hover:text-white"
       >
         <ArrowLeft className="h-4 w-4" />
-        Back to Fieldnotes
+        Back to my writings
       </Link>
 
       {/* Article Header */}
@@ -70,7 +72,7 @@ export default async function BlogPost({ params }: PageProps) {
       {/* Footer */}
       <footer className="mt-16 border-t border-gray-200 pt-8 dark:border-gray-800">
         <Link
-          href="/fieldnotes"
+          href="/writings"
           className="inline-flex items-center gap-2 text-sm font-medium text-black transition-colors hover:text-gray-600 dark:text-white dark:hover:text-gray-400"
         >
           <ArrowLeft className="h-4 w-4" />

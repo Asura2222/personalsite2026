@@ -1,16 +1,15 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 
 const navigation = [
-  { name: 'about', href: '/' },
-  { name: 'experiences', href: '/experiences' },
-  { name: 'fieldnotes', href: '/fieldnotes' },
-  { name: 'my philosophy', href: '/philosophy' },
-  { name: 'videos', href: '/videos' },
+  { name: "about", href: "/" },
+  { name: "my writings", href: "/writings" },
+  { name: "speaking & events", href: "/speaking" },
+  { name: "videos", href: "/videos" },
 ];
 
 export function Sidebar() {
@@ -27,10 +26,11 @@ export function Sidebar() {
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className={`text-sm lowercase tracking-wide transition-colors ${pathname === item.href
-                    ? 'text-black'
-                    : 'text-gray-400 hover:text-black'
-                    }`}
+                  className={`text-sm lowercase tracking-wide transition-colors ${
+                    pathname === item.href
+                      ? "text-black"
+                      : "text-gray-400 hover:text-black"
+                  }`}
                 >
                   {item.name}
                 </Link>
@@ -47,7 +47,9 @@ export function Sidebar() {
         </Link>
         <button
           type="button"
-          className="text-gray-700"
+          aria-label={mobileMenuOpen ? "Close navigation" : "Open navigation"}
+          aria-expanded={mobileMenuOpen}
+          className="flex min-h-11 min-w-11 items-center justify-center text-gray-700"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? (
@@ -68,10 +70,11 @@ export function Sidebar() {
                   <Link
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`text-2xl lowercase tracking-wide transition-colors ${pathname === item.href
-                      ? 'text-black'
-                      : 'text-gray-400 hover:text-black'
-                      }`}
+                    className={`text-2xl lowercase tracking-wide transition-colors ${
+                      pathname === item.href
+                        ? "text-black"
+                        : "text-gray-400 hover:text-black"
+                    }`}
                   >
                     {item.name}
                   </Link>

@@ -1,122 +1,109 @@
-import { Highlight } from "@/components/ui/highlight";
-import { ProjectGrid } from "@/components/sections/project-grid";
-import { Twitter, Linkedin, Mail, Github } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight, Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { PortfolioExplorer } from "@/components/sections/portfolio-explorer";
+import { AchievementOverview } from "@/components/sections/achievement-overview";
+import { IntroAchievements } from "@/components/sections/intro-achievements";
+import { SkillsTools } from "@/components/sections/skills-tools";
+import { StructuredData } from "@/components/structured-data";
+import { pageMetadata, profileSchema } from "@/lib/site";
+
+export const metadata = pageMetadata(
+  "James Win — Product Leader & Technical Founder",
+  "Founder of TalentOS, a governed multi-agent workspace. Built Build Myanmar to 450K+ followers and a team of 30. Explore my work, writing, and speaking.",
+  "/",
+);
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-5xl">
-      {/* Header with Name and Social Icons */}
-      <header className="mb-16">
-        <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:justify-between">
-          <div className="flex flex-col-reverse items-start gap-4 md:flex-row md:items-center">
-            <h1 className="text-4xl font-bold tracking-tight text-black md:text-6xl lg:text-7xl whitespace-nowrap">
-              James Win
+    <div className="portfolio-preview">
+      <StructuredData data={profileSchema} />
+      <div className="pv-page">
+        <header className="pv-header pv-header-compact">
+          <div className="pv-identity">
+            <h1 className="pv-wordmark">
+              <Link href="/">
+                James Win<span>.</span>
+              </Link>
             </h1>
-            <div className="relative h-12 w-12 md:h-16 md:w-16 overflow-hidden rounded-lg bg-gray-100">
-              <Image
-                src="/profile.jpg"
-                alt="James Win"
-                fill
-                className="object-cover"
-              />
-            </div>
+            <Image
+              src="/profile.png"
+              alt="James Win"
+              width={56}
+              height={56}
+              priority
+              className="pv-avatar"
+            />
           </div>
-
-          <div className="flex items-center gap-4">
-            <Link
-              href="https://x.com/Win22James"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 transition-colors hover:text-black"
+          <nav aria-label="Find me online">
+            <a
+              href="https://x.com/win22james"
+              aria-label="James Win on Twitter / X: @win22james"
             >
-              <Twitter className="h-5 w-5" />
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/james-win/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 transition-colors hover:text-black"
-            >
-              <Linkedin className="h-5 w-5" />
-            </Link>
-            <Link
+              <Twitter size={19} />
+            </a>
+            <a
               href="https://github.com/Asura2222"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 transition-colors hover:text-black"
+              aria-label="James Win on GitHub"
             >
-              <Github className="h-5 w-5" />
+              <Github size={19} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/james-win/"
+              aria-label="James Win on LinkedIn"
+            >
+              <Linkedin size={19} />
+            </a>
+            <a href="mailto:win@talentos.so" aria-label="Email James Win">
+              <Mail size={19} />
+            </a>
+          </nav>
+        </header>
+        <section className="pv-quick-intro" aria-labelledby="intro-title">
+          <h2 id="intro-title">
+            Founder. Builder.{" "}
+            <span className="pv-highlight">Curious person.</span>
+          </h2>
+          <p>
+            I work across product, engineering, and growth. Originally from
+            Myanmar, now in San Francisco. Here&apos;s some of what I&apos;ve
+            built.
+          </p>
+          <IntroAchievements />
+          <div className="pv-intro-links">
+            <a href="mailto:win@talentos.so">
+              Open to product leadership conversations{" "}
+              <ArrowUpRight size={14} />
+            </a>
+            <Link href="/speaking">
+              Speaking & events <ArrowUpRight size={14} />
             </Link>
-            <Link
-              href="mailto:win@talentosapp.com"
-              className="text-gray-400 transition-colors hover:text-black"
-            >
-              <Mail className="h-5 w-5" />
-            </Link>
-            <Link
-              href="https://t.me/win22james"
-              target="_blank"
-              className="text-gray-400 transition-colors hover:text-[#0088cc]"
-            >
-              <span className="text-sm font-bold border rounded px-1">TG</span>
+            <Link href="/writings">
+              My writings <ArrowUpRight size={14} />
             </Link>
           </div>
-        </div>
-      </header>
-
-      {/* Hero Tagline */}
-      <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-4 text-black">
-          Philosopher Builder.
-        </h2>
-        <p className="text-xl leading-relaxed text-gray-700 md:text-2xl">
-          I&apos;m interested in philosophy, history, and psychology. In another world, I would have studied them full-time. In this one, I&apos;m building <Link href="https://www.talentosapp.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-black underline decoration-gray-300 underline-offset-4 transition-colors hover:decoration-black">TalentOS</Link>.
-        </p>
-      </section>
-
-      {/* Origin — Build Myanmar */}
-      <section className="mb-12">
-        <h3 className="mb-5 text-xs uppercase tracking-widest text-gray-400 font-medium">
-          Origin
-        </h3>
-        <div className="space-y-5 text-lg leading-relaxed text-gray-700 md:text-xl">
-          <p>
-            I started building at 19, back home in Myanmar. <Link href="https://buildmyanmar.org" target="_blank" rel="noopener noreferrer"><Highlight color="blue">Build Myanmar</Highlight></Link> grew into the country&apos;s largest tech community &mdash; <Highlight color="blue">450K+ followers</Highlight>, <Highlight color="blue">60M+ views</Highlight>, and <Highlight color="green">5,000 builders</Highlight> who showed up because someone finally made a place for them.
-          </p>
-          <p>
-            We opened Myanmar&apos;s first physical spaces for builders and entrepreneurs, and produced the country&apos;s most famous tech podcast &mdash; giving a voice to the people actually doing the work.
-          </p>
-        </div>
-      </section>
-
-      {/* What I'm Building */}
-      <section className="mb-12">
-        <h3 className="mb-5 text-xs uppercase tracking-widest text-gray-400 font-medium">
-          What I&apos;m Building
-        </h3>
-        <div className="space-y-5 text-lg leading-relaxed text-gray-700 md:text-xl">
-          <p>
-            <Link href="https://www.talentosapp.com/" target="_blank" rel="noopener noreferrer"><Highlight color="purple">TalentOS</Highlight></Link> gives every talent a managed AI teammate. It lives in the chat app you already use, does real work through your connected tools, and lets humans and agents collaborate in one session &mdash; governed, secure, and fully auditable. We&apos;re just getting started.
-          </p>
-        </div>
-      </section>
-
-      {/* Now */}
-      <section className="mb-16">
-        <h3 className="mb-5 text-xs uppercase tracking-widest text-gray-400 font-medium">
-          Now
-        </h3>
-        <p className="text-lg leading-relaxed text-gray-700 md:text-xl">
-          I&apos;m based in San Francisco. I studied Applied Economics, and I still read philosophy, history, and psychology daily. I believe the fastest way to rebuild a country is to build systems that let everyone prove what they&apos;re capable of.
-        </p>
-      </section>
-
-      {/* Project Grid */}
-      <section>
-        <ProjectGrid />
-      </section>
+        </section>
+        <AchievementOverview />
+        <PortfolioExplorer />
+        <SkillsTools />
+        <footer className="pv-footer">
+          <div>
+            <p className="pv-eyebrow">Product leadership · Technical founder</p>
+            <h2>Get in touch.</h2>
+            <a className="pv-text-link" href="mailto:win@talentos.so">
+              win@talentos.so <ArrowUpRight size={16} />
+            </a>
+          </div>
+          <div className="pv-socials">
+            <Link href="/writings">
+              My writings <ArrowUpRight size={13} />
+            </Link>
+            <a href="https://x.com/win22james">
+              X <ArrowUpRight size={13} />
+            </a>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }

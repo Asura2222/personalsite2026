@@ -1,13 +1,12 @@
-'use client';
+"use client";
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Command } from "cmdk";
 import {
   Home,
-  Briefcase,
   BookOpen,
-  Lightbulb,
+  Mic,
   Youtube,
   Mail,
   Twitter,
@@ -45,7 +44,21 @@ export function CommandMenu() {
       >
         <span className="hidden lg:inline">Search</span>
         <span className="lg:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-search"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="lucide lucide-search"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
         </span>
         <kbd className="hidden lg:inline-block rounded bg-gray-100 px-2 py-0.5 text-xs">
           ⌘K
@@ -56,7 +69,9 @@ export function CommandMenu() {
       {open && (
         <div className="fixed inset-0 z-50 animate-in fade-in">
           {/* Backdrop */}
-          <div
+          <button
+            type="button"
+            aria-label="Close search"
             className="fixed inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setOpen(false)}
           />
@@ -83,25 +98,18 @@ export function CommandMenu() {
                     <span>Home</span>
                   </Command.Item>
                   <Command.Item
-                    onSelect={() => runCommand(() => router.push("/experiences"))}
-                    className="flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors hover:bg-gray-100"
-                  >
-                    <Briefcase className="h-4 w-4" />
-                    <span>Experiences</span>
-                  </Command.Item>
-                  <Command.Item
-                    onSelect={() => runCommand(() => router.push("/fieldnotes"))}
+                    onSelect={() => runCommand(() => router.push("/writings"))}
                     className="flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors hover:bg-gray-100"
                   >
                     <BookOpen className="h-4 w-4" />
-                    <span>Fieldnotes</span>
+                    <span>My writings</span>
                   </Command.Item>
                   <Command.Item
-                    onSelect={() => runCommand(() => router.push("/philosophy"))}
+                    onSelect={() => runCommand(() => router.push("/speaking"))}
                     className="flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors hover:bg-gray-100"
                   >
-                    <Lightbulb className="h-4 w-4" />
-                    <span>My Philosophy</span>
+                    <Mic className="h-4 w-4" />
+                    <span>Speaking & Events</span>
                   </Command.Item>
                   <Command.Item
                     onSelect={() => runCommand(() => router.push("/videos"))}
@@ -117,7 +125,7 @@ export function CommandMenu() {
                   <Command.Item
                     onSelect={() =>
                       runCommand(() => {
-                        navigator.clipboard.writeText("win@talentosapp.com");
+                        navigator.clipboard.writeText("win@talentos.so");
                       })
                     }
                     className="flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors hover:bg-gray-100"
@@ -128,7 +136,7 @@ export function CommandMenu() {
                   <Command.Item
                     onSelect={() =>
                       runCommand(() =>
-                        window.open("https://x.com/Win22James", "_blank")
+                        window.open("https://x.com/win22james", "_blank"),
                       )
                     }
                     className="flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors hover:bg-gray-100"
@@ -139,7 +147,10 @@ export function CommandMenu() {
                   <Command.Item
                     onSelect={() =>
                       runCommand(() =>
-                        window.open("https://www.linkedin.com/in/james-win/", "_blank")
+                        window.open(
+                          "https://www.linkedin.com/in/james-win/",
+                          "_blank",
+                        ),
                       )
                     }
                     className="flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors hover:bg-gray-100"
@@ -150,7 +161,7 @@ export function CommandMenu() {
                   <Command.Item
                     onSelect={() =>
                       runCommand(() =>
-                        window.open("https://github.com/Asura2222", "_blank")
+                        window.open("https://github.com/Asura2222", "_blank"),
                       )
                     }
                     className="flex cursor-pointer items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors hover:bg-gray-100 dark:hover:bg-gray-900"
