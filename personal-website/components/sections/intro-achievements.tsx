@@ -76,7 +76,9 @@ export function IntroAchievements() {
         <div className="pv-track-heading">
           <h2 id="myanmar-track">
             <span className="pv-track-title">
-              <a href="https://www.buildmyanmarmedia.com/">Build Myanmar</a>
+              <a href="https://www.youtube.com/@BuildMyanmarMedia">
+                Build Myanmar
+              </a>
               <Link
                 href="/work/build-myanmar"
                 className="pv-track-case"
