@@ -8,6 +8,12 @@ export const metadata = pageMetadata(
 
 const videos = [
   {
+    id: "LEwXDPN7gGc",
+    title: "TalentOS demo",
+    description:
+      "A walkthrough of TalentOS, the multiplayer AI workspace for people and their agents.",
+  },
+  {
     id: "nFmsdItCicg",
     title: "Video I",
     description: "",
@@ -44,19 +50,38 @@ export default function Videos() {
 
       <div className="flex flex-col gap-10">
         {videos.map((video) => (
-          <div key={video.id} className="group">
+          <article key={video.id} className="group">
+            {video.description && (
+              <header className="mb-4">
+                <h2 className="text-xl font-semibold tracking-tight text-black">
+                  <a
+                    href={`https://www.youtube.com/watch?v=${video.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline-offset-4 hover:underline"
+                  >
+                    {video.title}
+                  </a>
+                </h2>
+                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                  {video.description}
+                </p>
+              </header>
+            )}
             <div className="relative w-full overflow-hidden rounded-xl bg-gray-100 shadow-sm">
               <div className="aspect-video w-full">
                 <iframe
                   src={`https://www.youtube.com/embed/${video.id}`}
                   title={video.title}
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                   className="h-full w-full"
                 />
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </div>
