@@ -218,6 +218,10 @@ const projectSeeds: ProjectSeed[] = [
         href: "https://www.buildmyanmarmedia.com/",
       },
       {
+        label: "Build Myanmar on YouTube",
+        href: "https://www.youtube.com/@BuildMyanmarMedia",
+      },
+      {
         label: "How the channel reached 10K subscribers",
         href: "https://monkeynews.substack.com/p/how-build-myanmar-channel-got-10k",
       },

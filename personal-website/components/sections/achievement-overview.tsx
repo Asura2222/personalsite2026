@@ -81,12 +81,12 @@ export function AchievementOverview() {
                 TikTok followers <ArrowUpRight size={12} />
               </span>
             </Link>
-            <Link href="/work/build-myanmar">
+            <a href="https://www.youtube.com/@BuildMyanmarMedia">
               <strong>91K+</strong>
               <span>
                 YouTube subscribers <ArrowUpRight size={12} />
               </span>
-            </Link>
+            </a>
           </div>
           <div className="pv-community-milestone">
             <Link href="/work/build-myanmar#community-spaces">
